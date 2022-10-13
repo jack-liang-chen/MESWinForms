@@ -39,7 +39,7 @@
             this.pbRightBottom = new System.Windows.Forms.PictureBox();
             this.pbRightMiddle = new System.Windows.Forms.PictureBox();
             this.pbRightTop = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCenterCenter = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
@@ -51,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRightBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightMiddle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCenterCenter)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -81,7 +81,7 @@
             this.tlpCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCenter.Controls.Add(this.pbCamera, 0, 0);
             this.tlpCenter.Controls.Add(this.pbCenterBottom, 0, 2);
-            this.tlpCenter.Controls.Add(this.pictureBox1, 0, 1);
+            this.tlpCenter.Controls.Add(this.pbCenterCenter, 0, 1);
             this.tlpCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCenter.Location = new System.Drawing.Point(486, 128);
             this.tlpCenter.Name = "tlpCenter";
@@ -204,16 +204,16 @@
             this.pbRightTop.TabIndex = 1;
             this.pbRightTop.TabStop = false;
             // 
-            // pictureBox1
+            // pbCenterCenter
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MESWinForms.Properties.Resources.prods;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 475);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(717, 230);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pbCenterCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCenterCenter.Image = global::MESWinForms.Properties.Resources.prods;
+            this.pbCenterCenter.Location = new System.Drawing.Point(3, 475);
+            this.pbCenterCenter.Name = "pbCenterCenter";
+            this.pbCenterCenter.Size = new System.Drawing.Size(717, 230);
+            this.pbCenterCenter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCenterCenter.TabIndex = 2;
+            this.pbCenterCenter.TabStop = false;
             // 
             // MainForm
             // 
@@ -239,7 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRightBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightMiddle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCenterCenter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,7 +257,7 @@
         private System.Windows.Forms.PictureBox pbRightMiddle;
         private System.Windows.Forms.PictureBox pbRightTop;
         private System.Windows.Forms.PictureBox pbCenterBottom;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCenterCenter;
     }
 }
 
