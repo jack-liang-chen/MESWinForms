@@ -18,6 +18,11 @@ namespace MESWinForms
         public MainForm()
         {
             InitializeComponent();
+
+            lblTitleSysInfo.BackColor = Color.Transparent;
+            lblTitleCalib.BackColor = Color.Transparent;
+            lblTitleFPY.BackColor = Color.Transparent;
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
