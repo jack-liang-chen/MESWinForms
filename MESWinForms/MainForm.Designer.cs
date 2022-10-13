@@ -73,7 +73,7 @@
             this.tlpMain.RowCount = 2;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.69861F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.30139F));
-            this.tlpMain.Size = new System.Drawing.Size(1678, 1093);
+            this.tlpMain.Size = new System.Drawing.Size(1995, 1384);
             this.tlpMain.TabIndex = 0;
             // 
             // tlpCenter
@@ -86,14 +86,14 @@
             this.tlpCenter.Controls.Add(this.pbCenterBottom, 0, 2);
             this.tlpCenter.Controls.Add(this.pbCenterCenter, 0, 1);
             this.tlpCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCenter.Location = new System.Drawing.Point(488, 130);
+            this.tlpCenter.Location = new System.Drawing.Point(580, 164);
             this.tlpCenter.Name = "tlpCenter";
             this.tlpCenter.RowCount = 3;
             this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenter.Size = new System.Drawing.Size(726, 960);
+            this.tlpCenter.Size = new System.Drawing.Size(864, 1217);
             this.tlpCenter.TabIndex = 0;
             // 
             // pbCamera
@@ -101,7 +101,7 @@
             this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCamera.Location = new System.Drawing.Point(3, 3);
             this.pbCamera.Name = "pbCamera";
-            this.pbCamera.Size = new System.Drawing.Size(720, 474);
+            this.pbCamera.Size = new System.Drawing.Size(858, 602);
             this.pbCamera.TabIndex = 0;
             this.pbCamera.TabStop = false;
             // 
@@ -109,9 +109,9 @@
             // 
             this.pbCenterBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCenterBottom.Image = global::MESWinForms.Properties.Resources.box1;
-            this.pbCenterBottom.Location = new System.Drawing.Point(3, 723);
+            this.pbCenterBottom.Location = new System.Drawing.Point(3, 915);
             this.pbCenterBottom.Name = "pbCenterBottom";
-            this.pbCenterBottom.Size = new System.Drawing.Size(720, 234);
+            this.pbCenterBottom.Size = new System.Drawing.Size(858, 299);
             this.pbCenterBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCenterBottom.TabIndex = 1;
             this.pbCenterBottom.TabStop = false;
@@ -120,9 +120,9 @@
             // 
             this.pbCenterCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCenterCenter.Image = global::MESWinForms.Properties.Resources.prods;
-            this.pbCenterCenter.Location = new System.Drawing.Point(3, 483);
+            this.pbCenterCenter.Location = new System.Drawing.Point(3, 611);
             this.pbCenterCenter.Name = "pbCenterCenter";
-            this.pbCenterCenter.Size = new System.Drawing.Size(720, 234);
+            this.pbCenterCenter.Size = new System.Drawing.Size(858, 298);
             this.pbCenterCenter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCenterCenter.TabIndex = 2;
             this.pbCenterCenter.TabStop = false;
@@ -136,21 +136,21 @@
             this.tlpLeft.Controls.Add(this.pbLeftBottom, 0, 1);
             this.tlpLeft.Controls.Add(this.pbLeftTop, 0, 0);
             this.tlpLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLeft.Location = new System.Drawing.Point(3, 130);
+            this.tlpLeft.Location = new System.Drawing.Point(3, 164);
             this.tlpLeft.Name = "tlpLeft";
             this.tlpLeft.RowCount = 2;
             this.tlpLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpLeft.Size = new System.Drawing.Size(479, 960);
+            this.tlpLeft.Size = new System.Drawing.Size(571, 1217);
             this.tlpLeft.TabIndex = 1;
             // 
             // pbLeftBottom
             // 
             this.pbLeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbLeftBottom.Image = global::MESWinForms.Properties.Resources.box3;
-            this.pbLeftBottom.Location = new System.Drawing.Point(3, 483);
+            this.pbLeftBottom.Location = new System.Drawing.Point(3, 611);
             this.pbLeftBottom.Name = "pbLeftBottom";
-            this.pbLeftBottom.Size = new System.Drawing.Size(473, 474);
+            this.pbLeftBottom.Size = new System.Drawing.Size(565, 603);
             this.pbLeftBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLeftBottom.TabIndex = 1;
             this.pbLeftBottom.TabStop = false;
@@ -161,7 +161,7 @@
             this.pbLeftTop.Image = global::MESWinForms.Properties.Resources.box3;
             this.pbLeftTop.Location = new System.Drawing.Point(3, 3);
             this.pbLeftTop.Name = "pbLeftTop";
-            this.pbLeftTop.Size = new System.Drawing.Size(473, 474);
+            this.pbLeftTop.Size = new System.Drawing.Size(565, 602);
             this.pbLeftTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLeftTop.TabIndex = 0;
             this.pbLeftTop.TabStop = false;
@@ -176,22 +176,22 @@
             this.tlpRight.Controls.Add(this.pbRightMiddle, 0, 1);
             this.tlpRight.Controls.Add(this.pbRightTop, 0, 0);
             this.tlpRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRight.Location = new System.Drawing.Point(1220, 130);
+            this.tlpRight.Location = new System.Drawing.Point(1450, 164);
             this.tlpRight.Name = "tlpRight";
             this.tlpRight.RowCount = 3;
             this.tlpRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tlpRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tlpRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tlpRight.Size = new System.Drawing.Size(455, 960);
+            this.tlpRight.Size = new System.Drawing.Size(542, 1217);
             this.tlpRight.TabIndex = 2;
             // 
             // pbRightBottom
             // 
             this.pbRightBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbRightBottom.Image = global::MESWinForms.Properties.Resources.box3;
-            this.pbRightBottom.Location = new System.Drawing.Point(3, 643);
+            this.pbRightBottom.Location = new System.Drawing.Point(3, 813);
             this.pbRightBottom.Name = "pbRightBottom";
-            this.pbRightBottom.Size = new System.Drawing.Size(449, 314);
+            this.pbRightBottom.Size = new System.Drawing.Size(536, 401);
             this.pbRightBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRightBottom.TabIndex = 3;
             this.pbRightBottom.TabStop = false;
@@ -200,9 +200,9 @@
             // 
             this.pbRightMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbRightMiddle.Image = global::MESWinForms.Properties.Resources.box3;
-            this.pbRightMiddle.Location = new System.Drawing.Point(3, 323);
+            this.pbRightMiddle.Location = new System.Drawing.Point(3, 408);
             this.pbRightMiddle.Name = "pbRightMiddle";
-            this.pbRightMiddle.Size = new System.Drawing.Size(449, 314);
+            this.pbRightMiddle.Size = new System.Drawing.Size(536, 399);
             this.pbRightMiddle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRightMiddle.TabIndex = 2;
             this.pbRightMiddle.TabStop = false;
@@ -213,7 +213,7 @@
             this.pbRightTop.Image = global::MESWinForms.Properties.Resources.box3;
             this.pbRightTop.Location = new System.Drawing.Point(3, 3);
             this.pbRightTop.Name = "pbRightTop";
-            this.pbRightTop.Size = new System.Drawing.Size(449, 314);
+            this.pbRightTop.Size = new System.Drawing.Size(536, 399);
             this.pbRightTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRightTop.TabIndex = 1;
             this.pbRightTop.TabStop = false;
@@ -221,9 +221,9 @@
             // pbLogo
             // 
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbLogo.Location = new System.Drawing.Point(1220, 3);
+            this.pbLogo.Location = new System.Drawing.Point(1450, 3);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(455, 121);
+            this.pbLogo.Size = new System.Drawing.Size(542, 155);
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
@@ -232,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1672, 1076);
+            this.ClientSize = new System.Drawing.Size(1995, 1384);
             this.Controls.Add(this.tlpMain);
             this.Name = "MainForm";
             this.Text = "Form1";
