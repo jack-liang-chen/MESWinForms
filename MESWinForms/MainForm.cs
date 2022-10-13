@@ -13,12 +13,12 @@ namespace MESWinForms
 {
     public partial class MainForm : Form
     {
+        VideoCaptureDevice _videoCaptureDevice;
+
         public MainForm()
         {
             InitializeComponent();
         }
-
-        VideoCaptureDevice _videoCaptureDevice;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
