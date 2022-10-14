@@ -45,6 +45,11 @@ namespace MESWinForms
             };
             timer.Tick += async (s, e) => 
             {
+                // RightCenter: FPY
+
+
+
+
                 // RightBottom: Alarm
                 var vms = await _alarmService.GetAll();
                 lvRightBottom.Items.Clear();
@@ -54,9 +59,6 @@ namespace MESWinForms
                         new ListViewItem(
                             new string[] { vm.Id.ToString(), vm.System, vm.ResourceType, vm.CurrentTransitionType, vm.LastValue }));
                 }
-
-                //
-
             };
             timer.Start();  
         }
@@ -65,7 +67,7 @@ namespace MESWinForms
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _videoCaptureDevice.Stop();
+            _videoCaptureDevice?.Stop();
         }
     }
 }

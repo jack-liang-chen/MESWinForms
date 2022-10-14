@@ -15,6 +15,9 @@ namespace MESWinForms.Services
         public VideoCaptureDevice StartCamera(NewFrameEventHandler handler)
         {
             var filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            
+            if (filterInfoCollection.Count == 0) return null;
+
             var videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[0].MonikerString);
             videoCaptureDevice.NewFrame += handler;
             videoCaptureDevice.Start();
