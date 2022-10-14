@@ -40,7 +40,6 @@ namespace MESWinForms
 
         private async void MainForm_Load(object sender, EventArgs eventArgs)
         {
-            // CenterTop: Camera
             _videoCaptureDevice = _cameraService.StartCamera((s, e) => pbCamera.Image = (Bitmap)e.Frame.Clone());
             await RefreshUIAsync();
 
@@ -59,7 +58,7 @@ namespace MESWinForms
         {
             // Left
             await RefreshSysInfoAsync();
-            await RefreshFailedCaseChart();
+            await RefreshFailedCaseChartAsync();
 
             // Center
             await RefreshDAQChartAsync();
@@ -75,7 +74,7 @@ namespace MESWinForms
 
         }
 
-        private async Task RefreshFailedCaseChart()
+        private async Task RefreshFailedCaseChartAsync()
         {
         
         }
