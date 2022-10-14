@@ -19,6 +19,7 @@ namespace MESWinForms.Infra
             builder.RegisterType<MainForm>().SingleInstance();
 
             // Services
+            builder.RegisterType<CameraService>().SingleInstance();
             builder.RegisterType<DataService>().SingleInstance();
             builder.RegisterType<Logger>().SingleInstance();
 
