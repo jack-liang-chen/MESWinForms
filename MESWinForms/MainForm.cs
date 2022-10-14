@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MESWinForms
@@ -37,10 +38,11 @@ namespace MESWinForms
             _alarmService = alarmService;
         }
 
-        private void MainForm_Load(object sender, EventArgs eventArgs)
+        private async void MainForm_Load(object sender, EventArgs eventArgs)
         {
             // CenterTop: Camera
             _videoCaptureDevice = _cameraService.StartCamera((s, e) => pbCamera.Image = (Bitmap)e.Frame.Clone());
+            await RefreshUIAsync();
 
             var timer = new Timer
             {
@@ -48,25 +50,63 @@ namespace MESWinForms
             };
             timer.Tick += async (s, e) => 
             {
-                // RightCenter: FPY
-                var fpyVm = await _fpyService.GetAll();
-
-
-
-                // RightBottom: Alarm
-                var alermVMs = await _alarmService.GetAll();
-                lvRightBottom.Items.Clear();
-                foreach (var vm in alermVMs)
-                {
-                    lvRightBottom.Items.Add(
-                        new ListViewItem(
-                            new string[] { vm.Id.ToString(), vm.System, vm.ResourceType, vm.CurrentTransitionType, vm.LastValue }));
-                }
+                await RefreshUIAsync();
             };
             timer.Start();  
         }
 
+        private async Task RefreshUIAsync()
+        {
+            // Left
+            await RefreshSysInfoAsync();
+            await RefreshFailedCaseChart();
 
+            // Center
+            await RefreshDAQChartAsync();
+
+            // Right
+            await RefreshCalibrationChartAsync();
+            await RefreshFPYChartAsync();
+            await RefreshAlarmTableAsync();
+        }
+
+        private async Task RefreshSysInfoAsync()
+        {
+
+        }
+
+        private async Task RefreshFailedCaseChart()
+        {
+        
+        }
+
+        private async Task RefreshDAQChartAsync()
+        {
+
+        }
+
+        private async Task RefreshCalibrationChartAsync()
+        {
+
+        }
+
+        private async Task RefreshFPYChartAsync()
+        {
+            var fpyVm = await _fpyService.GetAll();
+
+        }
+
+        private async Task RefreshAlarmTableAsync()
+        {
+            var alermVMs = await _alarmService.GetAll();
+            lvRightBottom.Items.Clear();
+            foreach (var vm in alermVMs)
+            {
+                lvRightBottom.Items.Add(
+                    new ListViewItem(
+                        new string[] { vm.Id.ToString(), vm.System, vm.ResourceType, vm.CurrentTransitionType, vm.LastValue }));
+            }
+        }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {

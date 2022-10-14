@@ -20,6 +20,8 @@ namespace MESWinForms.Infra
 
             // Services
             builder.RegisterType<CameraService>().SingleInstance();
+            builder.RegisterType<DAQService>().SingleInstance();
+            builder.RegisterType<CalibService>().SingleInstance();
             builder.RegisterType<FPYService>().SingleInstance();
             builder.RegisterType<AlarmService>().SingleInstance();
             builder.RegisterType<DataService>().SingleInstance();
