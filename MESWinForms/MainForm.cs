@@ -16,11 +16,13 @@ namespace MESWinForms
         private VideoCaptureDevice _videoCaptureDevice;
 
         private readonly CameraService _cameraService;
+        private readonly FPYService _fpyService;
         private readonly AlarmService _alarmService;
 
 
         public MainForm(
             CameraService cameraService,
+            FPYService fpyService,
             AlarmService alarmService)
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace MESWinForms
             lblTitleFPY.BackColor = Color.Transparent;
 
             _cameraService = cameraService;
+            _fpyService = fpyService;
             _alarmService = alarmService;
         }
 
@@ -46,7 +49,7 @@ namespace MESWinForms
             timer.Tick += async (s, e) => 
             {
                 // RightCenter: FPY
-
+                await _fpyService.GetAll();
 
 
 

@@ -1,11 +1,9 @@
 ﻿using MESWinForms.MediaTypes.In;
+using MESWinForms.MediaTypes.In.Alarm;
+using MESWinForms.MediaTypes.In.TestResult;
 using RestSharp;
 using RestSharp.Authenticators;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MESWinForms.Services
@@ -26,10 +24,18 @@ namespace MESWinForms.Services
             };
         }
 
-        public async Task<AlarmInMediaType> GetAllAsync(string resource)
+        public async Task<AlarmInMediaType> GetAllAlarmsAsync()
         {
-            var request = new RestRequest(resource).AddJsonBody("{}");
+            var request = new RestRequest("nialarm/v1/query-instances").AddJsonBody("{}");
             var response = await _client.PostAsync<AlarmInMediaType>(request);
+
+            return response;
+        }
+
+        public async Task<TestResultInMediaType> GetAllTestResult()
+        {
+            var request = new RestRequest("nitestmonitor/v2/results?returnCount=false");
+            var response = await _client.GetAsync<TestResultInMediaType>(request);
 
             return response;
         }

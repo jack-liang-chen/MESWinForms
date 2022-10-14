@@ -10,8 +10,6 @@ namespace MESWinForms.Services
 {
     public class AlarmService
     {
-        private const string QUERY = "nialarm/v1/query-instances";
-
         private readonly DataService _dataService;
         private readonly Logger _logger;
 
@@ -25,9 +23,8 @@ namespace MESWinForms.Services
         {
             List<AlarmViewModel> result = new List<AlarmViewModel>();
 
-            var data = await _dataService.GetAllAsync(QUERY);
-            var count = 0;
-
+            var data = await _dataService.GetAllAlarmsAsync();
+            var index = 0;
             var maxCount = data.filterMatches.Count < 10 ? data.filterMatches.Count() : 10;
             
             for (int i = 0; i < maxCount; i++)
@@ -35,7 +32,7 @@ namespace MESWinForms.Services
                 var item = data.filterMatches[i];
                 var vm = new AlarmViewModel
                 {
-                    Id = ++count,
+                    Id = ++index,
                     System = item.properties.system
                 };
                 var lastTransition = item.transitions.OrderBy(x => x.occurredAt).LastOrDefault();

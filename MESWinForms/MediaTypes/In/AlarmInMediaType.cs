@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MESWinForms.MediaTypes.In
+namespace MESWinForms.MediaTypes.In.Alarm
 {
     public class AlarmInMediaType
     {
