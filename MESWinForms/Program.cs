@@ -14,9 +14,13 @@ namespace MESWinForms
         [STAThread]
         static void Main()
         {
+            AppEngine.Initialize();
+            AppEngine.RunStartupTasks();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            Application.Run(AppEngine.Resolve<MainForm>());
         }
     }
 }
