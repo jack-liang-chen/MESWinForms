@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace MESWinForms
 {
@@ -99,7 +100,8 @@ namespace MESWinForms
         private async Task RefreshFPYChartAsync()
         {
             var fpyVm = await _fpyService.GetAll();
-
+            fpFPY.Plot.AddScatter(fpyVm.FPYByMonth.Keys.ToArray(), fpyVm.FPYByMonth.Values.ToArray());
+            fpFPY.Refresh();
         }
 
         private async Task RefreshAlarmTableAsync()

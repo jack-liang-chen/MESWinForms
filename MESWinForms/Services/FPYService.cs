@@ -37,8 +37,8 @@ namespace MESWinForms.Services
 
                 var targetTestResult = data.results.Where(x => x.updatedAt.Year == targetYear && x.updatedAt.Month == targetMonth);
 
-                var passByMonth = 0f;
-                var failedByMonth = 0f;
+                var passByMonth = 0d;
+                var failedByMonth = 0d;
                 foreach (var item in targetTestResult)
                 {
                     passByMonth += item.statusTypeSummary.PASSED;

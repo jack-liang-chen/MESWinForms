@@ -8,6 +8,11 @@ namespace MESWinForms.Services
 {
     public class Logger
     {
+        public Logger()
+        {
+
+        }
+
         public void Info(string message) 
         {
             

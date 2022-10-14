@@ -47,7 +47,7 @@
             this.pnlRightCenter = new System.Windows.Forms.Panel();
             this.tlpRightCenter = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitleFPY = new System.Windows.Forms.Label();
-            this.formsPlot1 = new ScottPlot.FormsPlot();
+            this.fpFPY = new ScottPlot.FormsPlot();
             this.tlpRightTop = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitleCalib = new System.Windows.Forms.Label();
             this.fpCalib = new ScottPlot.FormsPlot();
@@ -316,7 +316,7 @@
             this.tlpRightCenter.ColumnCount = 1;
             this.tlpRightCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRightCenter.Controls.Add(this.lblTitleFPY, 0, 0);
-            this.tlpRightCenter.Controls.Add(this.formsPlot1, 0, 1);
+            this.tlpRightCenter.Controls.Add(this.fpFPY, 0, 1);
             this.tlpRightCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRightCenter.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tlpRightCenter.Location = new System.Drawing.Point(0, 0);
@@ -339,14 +339,14 @@
             this.lblTitleFPY.Text = "FPY统计";
             this.lblTitleFPY.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // formsPlot1
+            // fpFPY
             // 
-            this.formsPlot1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.formsPlot1.Location = new System.Drawing.Point(30, 84);
-            this.formsPlot1.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
-            this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(476, 285);
-            this.formsPlot1.TabIndex = 1;
+            this.fpFPY.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpFPY.Location = new System.Drawing.Point(30, 84);
+            this.fpFPY.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
+            this.fpFPY.Name = "fpFPY";
+            this.fpFPY.Size = new System.Drawing.Size(476, 285);
+            this.fpFPY.TabIndex = 1;
             // 
             // tlpRightTop
             // 
@@ -521,7 +521,7 @@
         private ScottPlot.FormsPlot fpCalib;
         private System.Windows.Forms.TableLayoutPanel tlpRightCenter;
         private System.Windows.Forms.Label lblTitleFPY;
-        private ScottPlot.FormsPlot formsPlot1;
+        private ScottPlot.FormsPlot fpFPY;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTop;
         private System.Windows.Forms.Label lblTitleSysInfo;
         private System.Windows.Forms.TableLayoutPanel tlpCenterBottom;
