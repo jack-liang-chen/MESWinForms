@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MESWinForms.Services;
+using System;
 using System.Windows.Forms;
 
 namespace MESWinForms
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -21,6 +16,13 @@ namespace MESWinForms
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(AppEngine.Resolve<MainForm>());
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+        }
+
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            AppEngine.Resolve<Logger>().Error(e.ToString());
         }
     }
 }

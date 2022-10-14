@@ -129,9 +129,11 @@
     <Compile Include="Services\CameraService.cs" />
     <Compile Include="Services\DAQService.cs" />
     <Compile Include="Services\DataService.cs" />
+    <Compile Include="Services\FailedTestService.cs" />
     <Compile Include="Services\FPYService.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\AlarmService.cs" />
+    <Compile Include="Services\SystemInfoService.cs" />
     <Compile Include="ViewModels\AlarmViewModel.cs" />
     <Compile Include="ViewModels\FPYViewModel.cs" />
     <EmbeddedResource Include="MainForm.resx">

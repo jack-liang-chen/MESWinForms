@@ -1,12 +1,7 @@
 ﻿using AForge.Video.DirectShow;
 using MESWinForms.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,13 +11,21 @@ namespace MESWinForms
     {
         private VideoCaptureDevice _videoCaptureDevice;
 
+        private readonly SystemInfoService _systemInfoService;
+        private readonly FailedTestService _failedTestService;
         private readonly CameraService _cameraService;
+        private readonly DAQService _daqService;
+        private readonly CalibService _calibService;
         private readonly FPYService _fpyService;
         private readonly AlarmService _alarmService;
 
 
         public MainForm(
+            SystemInfoService systemInfoService,
+            FailedTestService failedTestService,
             CameraService cameraService,
+            DAQService daqService,
+            CalibService calibService,
             FPYService fpyService,
             AlarmService alarmService)
         {
@@ -33,7 +36,11 @@ namespace MESWinForms
             lblTitleCalib.BackColor = Color.Transparent;
             lblTitleFPY.BackColor = Color.Transparent;
 
+            _systemInfoService = systemInfoService;
+            _failedTestService = failedTestService;
             _cameraService = cameraService;
+            _daqService = daqService;
+            _calibService = calibService;
             _fpyService = fpyService;
             _alarmService = alarmService;
         }

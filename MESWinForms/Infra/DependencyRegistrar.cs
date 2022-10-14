@@ -19,6 +19,8 @@ namespace MESWinForms.Infra
             builder.RegisterType<MainForm>().SingleInstance();
 
             // Services
+            builder.RegisterType<SystemInfoService>().SingleInstance();
+            builder.RegisterType<FailedTestService>().SingleInstance();
             builder.RegisterType<CameraService>().SingleInstance();
             builder.RegisterType<DAQService>().SingleInstance();
             builder.RegisterType<CalibService>().SingleInstance();
