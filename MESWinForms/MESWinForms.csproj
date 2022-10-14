@@ -170,5 +170,14 @@
   <ItemGroup>
     <None Include="Resources\prods.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box-edge-bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box-edge-left-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box-edge-top.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
