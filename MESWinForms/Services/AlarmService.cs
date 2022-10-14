@@ -21,7 +21,7 @@ namespace MESWinForms.Services
 
         public async Task<List<AlarmViewModel>> GetAll() 
         {
-            List<AlarmViewModel> result = new List<AlarmViewModel>();
+            var result = new List<AlarmViewModel>();
 
             var data = await _dataService.GetAllAlarmsAsync();
             var index = 0;

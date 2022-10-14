@@ -49,14 +49,14 @@ namespace MESWinForms
             timer.Tick += async (s, e) => 
             {
                 // RightCenter: FPY
-                await _fpyService.GetAll();
+                var fpyVm = await _fpyService.GetAll();
 
 
 
                 // RightBottom: Alarm
-                var vms = await _alarmService.GetAll();
+                var alermVMs = await _alarmService.GetAll();
                 lvRightBottom.Items.Clear();
-                foreach (var vm in vms)
+                foreach (var vm in alermVMs)
                 {
                     lvRightBottom.Items.Add(
                         new ListViewItem(

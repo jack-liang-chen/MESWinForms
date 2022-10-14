@@ -8,6 +8,6 @@ namespace MESWinForms.ViewModels
 {
     public class FPYViewModel
     {
-
+        public Dictionary<int, float> FPYByMonth = new Dictionary<int, float>();
     }
 }
