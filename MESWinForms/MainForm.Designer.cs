@@ -52,7 +52,6 @@
             this.lblTitleCalib = new System.Windows.Forms.Label();
             this.fpCalib = new ScottPlot.FormsPlot();
             this.pnlRightBottom = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tlpRightBottom = new System.Windows.Forms.TableLayoutPanel();
             this.lvRightBottom = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,6 +59,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -76,8 +76,8 @@
             this.tlpRightCenter.SuspendLayout();
             this.tlpRightTop.SuspendLayout();
             this.pnlRightBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tlpRightBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -398,15 +398,6 @@
             this.pnlRightBottom.Size = new System.Drawing.Size(536, 401);
             this.pnlRightBottom.TabIndex = 8;
             // 
-            // pbLogo
-            // 
-            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbLogo.Location = new System.Drawing.Point(1450, 3);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(542, 155);
-            this.pbLogo.TabIndex = 3;
-            this.pbLogo.TabStop = false;
-            // 
             // tlpRightBottom
             // 
             this.tlpRightBottom.BackgroundImage = global::MESWinForms.Properties.Resources.box2;
@@ -453,6 +444,7 @@
             // 
             this.columnHeader2.Text = "报警系统";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
@@ -468,6 +460,15 @@
             // 
             this.columnHeader5.Text = "最后值";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbLogo.Location = new System.Drawing.Point(1450, 3);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(542, 155);
+            this.pbLogo.TabIndex = 3;
+            this.pbLogo.TabStop = false;
             // 
             // MainForm
             // 
@@ -496,8 +497,8 @@
             this.tlpRightCenter.ResumeLayout(false);
             this.tlpRightTop.ResumeLayout(false);
             this.pnlRightBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.tlpRightBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
