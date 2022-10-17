@@ -40,11 +40,11 @@
             this.fpFailedCaseTop = new ScottPlot.FormsPlot();
             this.fpFailedCaseBottom = new ScottPlot.FormsPlot();
             this.tlpLeftTop = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpLeftTopContent = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpLeftTopLeftSide = new System.Windows.Forms.TableLayoutPanel();
             this.fpSysInfoTop = new ScottPlot.FormsPlot();
             this.fpSysInfoBottom = new ScottPlot.FormsPlot();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpLeftTopRightSide = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUserValue = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,9 +83,9 @@
             this.tlpLeft.SuspendLayout();
             this.tlpLeftBottom.SuspendLayout();
             this.tlpLeftTop.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.tlpLeftTopContent.SuspendLayout();
+            this.tlpLeftTopLeftSide.SuspendLayout();
+            this.tlpLeftTopRightSide.SuspendLayout();
             this.tlpRight.SuspendLayout();
             this.pnlRightCenter.SuspendLayout();
             this.tlpRightCenter.SuspendLayout();
@@ -262,7 +262,7 @@
             this.tlpLeftTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.tlpLeftTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93F));
             this.tlpLeftTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.tlpLeftTop.Controls.Add(this.tableLayoutPanel1, 1, 2);
+            this.tlpLeftTop.Controls.Add(this.tlpLeftTopContent, 1, 2);
             this.tlpLeftTop.Controls.Add(this.lblSysInfo, 1, 1);
             this.tlpLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeftTop.Location = new System.Drawing.Point(3, 3);
@@ -275,37 +275,36 @@
             this.tlpLeftTop.Size = new System.Drawing.Size(420, 449);
             this.tlpLeftTop.TabIndex = 9;
             // 
-            // tableLayoutPanel1
+            // tlpLeftTopContent
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 82);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 457F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 339);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tlpLeftTopContent.ColumnCount = 2;
+            this.tlpLeftTopContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpLeftTopContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpLeftTopContent.Controls.Add(this.tlpLeftTopLeftSide, 1, 0);
+            this.tlpLeftTopContent.Controls.Add(this.tlpLeftTopRightSide, 0, 0);
+            this.tlpLeftTopContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpLeftTopContent.Location = new System.Drawing.Point(19, 82);
+            this.tlpLeftTopContent.Name = "tlpLeftTopContent";
+            this.tlpLeftTopContent.RowCount = 1;
+            this.tlpLeftTopContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpLeftTopContent.Size = new System.Drawing.Size(384, 339);
+            this.tlpLeftTopContent.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // tlpLeftTopLeftSide
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.fpSysInfoTop, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.fpSysInfoBottom, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(195, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(186, 333);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tlpLeftTopLeftSide.ColumnCount = 1;
+            this.tlpLeftTopLeftSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpLeftTopLeftSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpLeftTopLeftSide.Controls.Add(this.fpSysInfoTop, 0, 0);
+            this.tlpLeftTopLeftSide.Controls.Add(this.fpSysInfoBottom, 0, 1);
+            this.tlpLeftTopLeftSide.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpLeftTopLeftSide.Location = new System.Drawing.Point(156, 3);
+            this.tlpLeftTopLeftSide.Name = "tlpLeftTopLeftSide";
+            this.tlpLeftTopLeftSide.RowCount = 2;
+            this.tlpLeftTopLeftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLeftTopLeftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLeftTopLeftSide.Size = new System.Drawing.Size(225, 333);
+            this.tlpLeftTopLeftSide.TabIndex = 0;
             // 
             // fpSysInfoTop
             // 
@@ -313,7 +312,7 @@
             this.fpSysInfoTop.Location = new System.Drawing.Point(7, 5);
             this.fpSysInfoTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.fpSysInfoTop.Name = "fpSysInfoTop";
-            this.fpSysInfoTop.Size = new System.Drawing.Size(172, 156);
+            this.fpSysInfoTop.Size = new System.Drawing.Size(211, 156);
             this.fpSysInfoTop.TabIndex = 0;
             // 
             // fpSysInfoBottom
@@ -322,38 +321,38 @@
             this.fpSysInfoBottom.Location = new System.Drawing.Point(7, 171);
             this.fpSysInfoBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.fpSysInfoBottom.Name = "fpSysInfoBottom";
-            this.fpSysInfoBottom.Size = new System.Drawing.Size(172, 157);
+            this.fpSysInfoBottom.Size = new System.Drawing.Size(211, 157);
             this.fpSysInfoBottom.TabIndex = 1;
             // 
-            // tableLayoutPanel3
+            // tlpLeftTopRightSide
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblUserValue, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblWorkspaceValue, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lblMgrSysValue, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lblConnectionDev, 1, 3);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 10;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(186, 333);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.tlpLeftTopRightSide.ColumnCount = 2;
+            this.tlpLeftTopRightSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLeftTopRightSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLeftTopRightSide.Controls.Add(this.label1, 0, 0);
+            this.tlpLeftTopRightSide.Controls.Add(this.lblUserValue, 1, 0);
+            this.tlpLeftTopRightSide.Controls.Add(this.label2, 0, 1);
+            this.tlpLeftTopRightSide.Controls.Add(this.lblWorkspaceValue, 1, 1);
+            this.tlpLeftTopRightSide.Controls.Add(this.label3, 0, 2);
+            this.tlpLeftTopRightSide.Controls.Add(this.lblMgrSysValue, 1, 2);
+            this.tlpLeftTopRightSide.Controls.Add(this.label4, 0, 3);
+            this.tlpLeftTopRightSide.Controls.Add(this.lblConnectionDev, 1, 3);
+            this.tlpLeftTopRightSide.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpLeftTopRightSide.Location = new System.Drawing.Point(3, 3);
+            this.tlpLeftTopRightSide.Name = "tlpLeftTopRightSide";
+            this.tlpLeftTopRightSide.RowCount = 10;
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.Size = new System.Drawing.Size(147, 333);
+            this.tlpLeftTopRightSide.TabIndex = 1;
             // 
             // label1
             // 
@@ -363,7 +362,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 33);
+            this.label1.Size = new System.Drawing.Size(67, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "角色:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -374,9 +373,9 @@
             this.lblUserValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblUserValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUserValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblUserValue.Location = new System.Drawing.Point(96, 0);
+            this.lblUserValue.Location = new System.Drawing.Point(76, 0);
             this.lblUserValue.Name = "lblUserValue";
-            this.lblUserValue.Size = new System.Drawing.Size(87, 33);
+            this.lblUserValue.Size = new System.Drawing.Size(68, 33);
             this.lblUserValue.TabIndex = 1;
             this.lblUserValue.Text = "Admin";
             this.lblUserValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -389,7 +388,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
             this.label2.Location = new System.Drawing.Point(3, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 33);
+            this.label2.Size = new System.Drawing.Size(67, 33);
             this.label2.TabIndex = 2;
             this.label2.Text = "工作区：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -400,9 +399,9 @@
             this.lblWorkspaceValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblWorkspaceValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWorkspaceValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblWorkspaceValue.Location = new System.Drawing.Point(96, 33);
+            this.lblWorkspaceValue.Location = new System.Drawing.Point(76, 33);
             this.lblWorkspaceValue.Name = "lblWorkspaceValue";
-            this.lblWorkspaceValue.Size = new System.Drawing.Size(87, 33);
+            this.lblWorkspaceValue.Size = new System.Drawing.Size(68, 33);
             this.lblWorkspaceValue.TabIndex = 3;
             this.lblWorkspaceValue.Text = "Default";
             this.lblWorkspaceValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -415,7 +414,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
             this.label3.Location = new System.Drawing.Point(3, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 33);
+            this.label3.Size = new System.Drawing.Size(67, 33);
             this.label3.TabIndex = 4;
             this.label3.Text = "管理系统：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -426,9 +425,9 @@
             this.lblMgrSysValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMgrSysValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMgrSysValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblMgrSysValue.Location = new System.Drawing.Point(96, 66);
+            this.lblMgrSysValue.Location = new System.Drawing.Point(76, 66);
             this.lblMgrSysValue.Name = "lblMgrSysValue";
-            this.lblMgrSysValue.Size = new System.Drawing.Size(87, 33);
+            this.lblMgrSysValue.Size = new System.Drawing.Size(68, 33);
             this.lblMgrSysValue.TabIndex = 5;
             this.lblMgrSysValue.Text = "4";
             this.lblMgrSysValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -441,7 +440,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
             this.label4.Location = new System.Drawing.Point(3, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 33);
+            this.label4.Size = new System.Drawing.Size(67, 33);
             this.label4.TabIndex = 6;
             this.label4.Text = "连接设备:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -452,9 +451,9 @@
             this.lblConnectionDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblConnectionDev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblConnectionDev.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblConnectionDev.Location = new System.Drawing.Point(96, 99);
+            this.lblConnectionDev.Location = new System.Drawing.Point(76, 99);
             this.lblConnectionDev.Name = "lblConnectionDev";
-            this.lblConnectionDev.Size = new System.Drawing.Size(87, 33);
+            this.lblConnectionDev.Size = new System.Drawing.Size(68, 33);
             this.lblConnectionDev.TabIndex = 7;
             this.lblConnectionDev.Text = "45";
             this.lblConnectionDev.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -693,9 +692,9 @@
             this.lblDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblDateTime.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblDateTime.Location = new System.Drawing.Point(4, 0);
+            this.lblDateTime.Location = new System.Drawing.Point(3, 0);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(568, 161);
+            this.lblDateTime.Size = new System.Drawing.Size(426, 121);
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -722,10 +721,10 @@
             this.tlpLeftBottom.ResumeLayout(false);
             this.tlpLeftTop.ResumeLayout(false);
             this.tlpLeftTop.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            this.tlpLeftTopContent.ResumeLayout(false);
+            this.tlpLeftTopLeftSide.ResumeLayout(false);
+            this.tlpLeftTopRightSide.ResumeLayout(false);
+            this.tlpLeftTopRightSide.PerformLayout();
             this.tlpRight.ResumeLayout(false);
             this.pnlRightCenter.ResumeLayout(false);
             this.tlpRightCenter.ResumeLayout(false);
@@ -768,12 +767,12 @@
         private ScottPlot.FormsPlot fpFailedCaseTop;
         private ScottPlot.FormsPlot fpFailedCaseBottom;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTop;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpLeftTopContent;
+        private System.Windows.Forms.TableLayoutPanel tlpLeftTopLeftSide;
         private ScottPlot.FormsPlot fpSysInfoTop;
         private ScottPlot.FormsPlot fpSysInfoBottom;
         private System.Windows.Forms.Label lblSysInfo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tlpLeftTopRightSide;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUserValue;
         private System.Windows.Forms.Label label2;
