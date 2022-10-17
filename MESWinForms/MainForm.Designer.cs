@@ -56,7 +56,6 @@
             this.tlpRight = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRightCenter = new System.Windows.Forms.Panel();
             this.tlpRightTop = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitleCalib = new System.Windows.Forms.Label();
             this.fpCalib = new ScottPlot.FormsPlot();
             this.pnlRightBottom = new System.Windows.Forms.Panel();
             this.tlpRightBottom = new System.Windows.Forms.TableLayoutPanel();
@@ -492,37 +491,24 @@
             this.tlpRightTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tlpRightTop.ColumnCount = 1;
             this.tlpRightTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRightTop.Controls.Add(this.lblTitleCalib, 0, 0);
             this.tlpRightTop.Controls.Add(this.fpCalib, 0, 1);
             this.tlpRightTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRightTop.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tlpRightTop.Location = new System.Drawing.Point(3, 3);
             this.tlpRightTop.Name = "tlpRightTop";
             this.tlpRightTop.RowCount = 2;
-            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92F));
             this.tlpRightTop.Size = new System.Drawing.Size(400, 297);
             this.tlpRightTop.TabIndex = 7;
-            // 
-            // lblTitleCalib
-            // 
-            this.lblTitleCalib.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitleCalib.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.lblTitleCalib.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblTitleCalib.Location = new System.Drawing.Point(3, 0);
-            this.lblTitleCalib.Name = "lblTitleCalib";
-            this.lblTitleCalib.Size = new System.Drawing.Size(394, 59);
-            this.lblTitleCalib.TabIndex = 0;
-            this.lblTitleCalib.Text = "校准管理";
-            this.lblTitleCalib.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // fpCalib
             // 
             this.fpCalib.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCalib.Location = new System.Drawing.Point(30, 64);
+            this.fpCalib.Location = new System.Drawing.Point(30, 28);
             this.fpCalib.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
             this.fpCalib.Name = "fpCalib";
-            this.fpCalib.Size = new System.Drawing.Size(340, 203);
+            this.fpCalib.Size = new System.Drawing.Size(340, 239);
             this.fpCalib.TabIndex = 1;
             // 
             // pnlRightBottom
@@ -721,7 +707,6 @@
         private System.Windows.Forms.Panel pnlCenterBottom;
         private System.Windows.Forms.Panel pnlRightCenter;
         private System.Windows.Forms.TableLayoutPanel tlpRightTop;
-        private System.Windows.Forms.Label lblTitleCalib;
         private ScottPlot.FormsPlot fpCalib;
         private System.Windows.Forms.TableLayoutPanel tlpCenterBottom;
         private System.Windows.Forms.Panel pnlRightBottom;

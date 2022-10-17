@@ -33,12 +33,31 @@ namespace MESWinForms
             InitializeComponent();
 
             lblSysInfo.BackColor = Color.Transparent;
-            lblTitleCalib.BackColor = Color.Transparent;
             tlpLeftTop.BackColor = Color.Transparent;
             fpCenterBottom.BackColor = Color.Transparent;
 
+            fpSysInfoTop.Plot.Style(Style.Black);
+
+
+            fpSysInfoBottom.Plot.Style(Style.Black);
+
+
+
+            fpFailedCaseTop.Plot.Title("Failed测试分析");
+            fpFailedCaseTop.Plot.Style(Style.Black);
+
+
+            fpFailedCaseBottom.Plot.Title("Failed测试统计");
+            fpFailedCaseBottom.Plot.Style(Style.Black);
+
+
+
             fpCenterBottom.Plot.Title("监控显示");
             fpCenterBottom.Plot.YAxis.Label("值");
+
+            fpCalib.Plot.Title("校准管理");
+            fpCalib.Plot.Style(Style.Black);
+
 
 
             fpCenterBottom.Plot.Style(Style.Black);
@@ -106,10 +125,14 @@ namespace MESWinForms
         private async Task RefreshDAQChartAsync()
         {
             var temperatures = await _daqService.GetAllTagHistoryValues("tempetaure.tag");
-            var yValues = temperatures.Select(x => x.value).ToArray();
-            var xValues = temperatures.Select(x => x.timestamp).ToArray();
+            var tempYValues = temperatures.Select(x => x.value).ToArray();
+            fpCenterBottom.Plot.AddSignal(tempYValues);
 
-            var signal = fpCenterBottom.Plot.AddSignal(yValues);
+            var presures = await _daqService.GetAllTagHistoryValues("Presure.tag");
+            var presuresYValues = presures.Select(x => x.value).ToArray();
+            fpCenterBottom.Plot.AddSignal(presuresYValues);
+
+
             fpCenterBottom.Refresh();
         }
 
