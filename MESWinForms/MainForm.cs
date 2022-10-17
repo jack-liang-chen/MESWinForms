@@ -32,7 +32,7 @@ namespace MESWinForms
         {
             InitializeComponent();
 
-            //lblTitleSysInfo.BackColor = Color.Transparent;
+            lblSysInfo.BackColor = Color.Transparent;
             lblSysMgr.BackColor = Color.Transparent;
             lblTitleCalib.BackColor = Color.Transparent;
             lblTitleFPY.BackColor = Color.Transparent;

@@ -42,6 +42,9 @@
             this.tlpLeftTop = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.fpSysInfoTop = new ScottPlot.FormsPlot();
+            this.fpSysInfoBottom = new ScottPlot.FormsPlot();
+            this.lblSysInfo = new System.Windows.Forms.Label();
             this.tlpRight = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRightCenter = new System.Windows.Forms.Panel();
             this.tlpRightCenter = new System.Windows.Forms.TableLayoutPanel();
@@ -59,8 +62,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.fpSysInfoTop = new ScottPlot.FormsPlot();
-            this.fpSysInfoBottom = new ScottPlot.FormsPlot();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -246,13 +247,14 @@
             this.tlpLeftTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93F));
             this.tlpLeftTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tlpLeftTop.Controls.Add(this.tableLayoutPanel1, 1, 2);
+            this.tlpLeftTop.Controls.Add(this.lblSysInfo, 1, 1);
             this.tlpLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeftTop.Location = new System.Drawing.Point(3, 3);
             this.tlpLeftTop.Name = "tlpLeftTop";
             this.tlpLeftTop.RowCount = 4;
             this.tlpLeftTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tlpLeftTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeftTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tlpLeftTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77F));
             this.tlpLeftTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpLeftTop.Size = new System.Drawing.Size(565, 602);
             this.tlpLeftTop.TabIndex = 9;
@@ -264,12 +266,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 171);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 111);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 409F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 397);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 427F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 457);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -285,8 +287,39 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 391);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 451);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // fpSysInfoTop
+            // 
+            this.fpSysInfoTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpSysInfoTop.Location = new System.Drawing.Point(7, 5);
+            this.fpSysInfoTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpSysInfoTop.Name = "fpSysInfoTop";
+            this.fpSysInfoTop.Size = new System.Drawing.Size(240, 215);
+            this.fpSysInfoTop.TabIndex = 0;
+            // 
+            // fpSysInfoBottom
+            // 
+            this.fpSysInfoBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpSysInfoBottom.Location = new System.Drawing.Point(7, 230);
+            this.fpSysInfoBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpSysInfoBottom.Name = "fpSysInfoBottom";
+            this.fpSysInfoBottom.Size = new System.Drawing.Size(240, 216);
+            this.fpSysInfoBottom.TabIndex = 1;
+            // 
+            // lblSysInfo
+            // 
+            this.lblSysInfo.AutoSize = true;
+            this.lblSysInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSysInfo.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.lblSysInfo.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblSysInfo.Location = new System.Drawing.Point(25, 48);
+            this.lblSysInfo.Name = "lblSysInfo";
+            this.lblSysInfo.Size = new System.Drawing.Size(519, 60);
+            this.lblSysInfo.TabIndex = 1;
+            this.lblSysInfo.Text = "系统管理";
+            this.lblSysInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // tlpRight
             // 
@@ -479,24 +512,6 @@
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
-            // fpSysInfoTop
-            // 
-            this.fpSysInfoTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpSysInfoTop.Location = new System.Drawing.Point(9, 7);
-            this.fpSysInfoTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpSysInfoTop.Name = "fpSysInfoTop";
-            this.fpSysInfoTop.Size = new System.Drawing.Size(320, 247);
-            this.fpSysInfoTop.TabIndex = 0;
-            // 
-            // fpSysInfoBottom
-            // 
-            this.fpSysInfoBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpSysInfoBottom.Location = new System.Drawing.Point(9, 267);
-            this.fpSysInfoBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpSysInfoBottom.Name = "fpSysInfoBottom";
-            this.fpSysInfoBottom.Size = new System.Drawing.Size(320, 248);
-            this.fpSysInfoBottom.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -517,6 +532,7 @@
             this.tlpLeft.ResumeLayout(false);
             this.tlpLeftBottom.ResumeLayout(false);
             this.tlpLeftTop.ResumeLayout(false);
+            this.tlpLeftTop.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tlpRight.ResumeLayout(false);
@@ -565,6 +581,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private ScottPlot.FormsPlot fpSysInfoTop;
         private ScottPlot.FormsPlot fpSysInfoBottom;
+        private System.Windows.Forms.Label lblSysInfo;
     }
 }
 
