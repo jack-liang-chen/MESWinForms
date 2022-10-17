@@ -143,7 +143,6 @@
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\AlarmService.cs" />
     <Compile Include="Services\SystemInfoService.cs" />
-    <Compile Include="Services\TagHistoryService.cs" />
     <Compile Include="ViewModels\AlarmViewModel.cs" />
     <Compile Include="ViewModels\FPYViewModel.cs" />
     <EmbeddedResource Include="MainForm.resx">

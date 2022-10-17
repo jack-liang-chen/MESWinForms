@@ -33,12 +33,15 @@ namespace MESWinForms
             InitializeComponent();
 
             lblSysInfo.BackColor = Color.Transparent;
-            lblSysMgr.BackColor = Color.Transparent;
             lblTitleCalib.BackColor = Color.Transparent;
-
             tlpLeftTop.BackColor = Color.Transparent;
             fpCenterBottom.BackColor = Color.Transparent;
 
+            fpCenterBottom.Plot.Title("监控显示");
+            fpCenterBottom.Plot.YAxis.Label("值");
+
+
+            fpCenterBottom.Plot.Style(Style.Black);
             fpFPY.Plot.Title("FPY 统计");
             fpFPY.Plot.YAxis.Label("FPY");
             fpFPY.Plot.XAxis.Label("月");
@@ -102,7 +105,12 @@ namespace MESWinForms
 
         private async Task RefreshDAQChartAsync()
         {
+            var temperatures = await _daqService.GetAllTagHistoryValues("tempetaure.tag");
+            var yValues = temperatures.Select(x => x.value).ToArray();
+            var xValues = temperatures.Select(x => x.timestamp).ToArray();
 
+            var signal = fpCenterBottom.Plot.AddSignal(yValues);
+            fpCenterBottom.Refresh();
         }
 
         private async Task RefreshCalibrationChartAsync()

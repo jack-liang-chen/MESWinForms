@@ -19,6 +19,6 @@ namespace MESWinForms.MediaTypes.In
     public class TagValue
     {
         public DateTime timestamp { get; set; }
-        public string value { get; set; }
+        public double value { get; set; }
     }
 }

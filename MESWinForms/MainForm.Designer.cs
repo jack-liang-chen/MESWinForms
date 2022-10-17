@@ -32,7 +32,6 @@
             this.tlpCenter = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCenterBottom = new System.Windows.Forms.Panel();
             this.tlpCenterBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSysMgr = new System.Windows.Forms.Label();
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.pbCenterCenter = new System.Windows.Forms.PictureBox();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
@@ -154,28 +153,15 @@
             this.tlpCenterBottom.ColumnCount = 1;
             this.tlpCenterBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpCenterBottom.Controls.Add(this.fpCenterBottom, 0, 1);
-            this.tlpCenterBottom.Controls.Add(this.lblSysMgr, 0, 0);
             this.tlpCenterBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCenterBottom.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tlpCenterBottom.Location = new System.Drawing.Point(0, 0);
             this.tlpCenterBottom.Name = "tlpCenterBottom";
             this.tlpCenterBottom.RowCount = 2;
-            this.tlpCenterBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpCenterBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlpCenterBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tlpCenterBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94F));
             this.tlpCenterBottom.Size = new System.Drawing.Size(640, 223);
             this.tlpCenterBottom.TabIndex = 8;
-            // 
-            // lblSysMgr
-            // 
-            this.lblSysMgr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSysMgr.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.lblSysMgr.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblSysMgr.Location = new System.Drawing.Point(3, 0);
-            this.lblSysMgr.Name = "lblSysMgr";
-            this.lblSysMgr.Size = new System.Drawing.Size(634, 44);
-            this.lblSysMgr.TabIndex = 0;
-            this.lblSysMgr.Text = "系统管理";
-            this.lblSysMgr.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // pbCamera
             // 
@@ -625,10 +611,10 @@
             // fpCenterBottom
             // 
             this.fpCenterBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCenterBottom.Location = new System.Drawing.Point(7, 49);
-            this.fpCenterBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpCenterBottom.Location = new System.Drawing.Point(60, 24);
+            this.fpCenterBottom.Margin = new System.Windows.Forms.Padding(45, 5, 45, 35);
             this.fpCenterBottom.Name = "fpCenterBottom";
-            this.fpCenterBottom.Size = new System.Drawing.Size(626, 169);
+            this.fpCenterBottom.Size = new System.Drawing.Size(733, 227);
             this.fpCenterBottom.TabIndex = 1;
             // 
             // label5
@@ -738,7 +724,6 @@
         private System.Windows.Forms.Label lblTitleCalib;
         private ScottPlot.FormsPlot fpCalib;
         private System.Windows.Forms.TableLayoutPanel tlpCenterBottom;
-        private System.Windows.Forms.Label lblSysMgr;
         private System.Windows.Forms.Panel pnlRightBottom;
         private System.Windows.Forms.TableLayoutPanel tlpRightBottom;
         private System.Windows.Forms.ListView lvRightBottom;
