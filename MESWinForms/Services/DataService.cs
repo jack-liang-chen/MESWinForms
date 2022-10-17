@@ -32,10 +32,10 @@ namespace MESWinForms.Services
             return response;
         }
 
-        public async Task<TestResultInMediaType> GetAllTestResult()
+        public async Task<T> GetAsync<T>(string resource)
         {
-            var request = new RestRequest("nitestmonitor/v2/results?returnCount=false");
-            var response = await _client.GetAsync<TestResultInMediaType>(request);
+            var request = new RestRequest(resource);
+            var response = await _client.GetAsync<T>(request);
 
             return response;
         }

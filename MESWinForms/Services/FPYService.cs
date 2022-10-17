@@ -1,4 +1,5 @@
-﻿using MESWinForms.ViewModels;
+﻿using MESWinForms.MediaTypes.In.TestResult;
+using MESWinForms.ViewModels;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace MESWinForms.Services
 
         public async Task<FPYViewModel> GetAll()
         {
-            var data = await _dataService.GetAllTestResult();
+            var data = await _dataService.GetAsync<TestResultInMediaType>("nitestmonitor/v2/results?returnCount=false");
             var currentYear = DateTime.Now.Year;
             var currentMonth = DateTime.Now.Month;
 

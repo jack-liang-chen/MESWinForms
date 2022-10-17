@@ -100,7 +100,8 @@ namespace MESWinForms
 
         private async Task RefreshSysInfoAsync()
         {
-
+            lblMgrSysValue.Text = (await _systemInfoService.GetSystemsCountAsync()).ToString();
+            lblConnectionDev.Text = (await _systemInfoService.GetConnectionDeviceCountAsync()).ToString();
         }
 
         private async Task RefreshFailedCaseChartAsync()

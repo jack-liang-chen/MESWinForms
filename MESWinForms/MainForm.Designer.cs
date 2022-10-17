@@ -64,6 +64,13 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.lblUserValue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblWorkspaceValue = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblMgrSysValue = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblConnectionDev = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -318,6 +325,13 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblUserValue, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblWorkspaceValue, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblMgrSysValue, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblConnectionDev, 1, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -552,6 +566,97 @@
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
+            // lblUserValue
+            // 
+            this.lblUserValue.AutoSize = true;
+            this.lblUserValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUserValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUserValue.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblUserValue.Location = new System.Drawing.Point(129, 0);
+            this.lblUserValue.Name = "lblUserValue";
+            this.lblUserValue.Size = new System.Drawing.Size(121, 45);
+            this.lblUserValue.TabIndex = 1;
+            this.lblUserValue.Text = "Admin";
+            this.lblUserValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(3, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 45);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "工作区：";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblWorkspaceValue
+            // 
+            this.lblWorkspaceValue.AutoSize = true;
+            this.lblWorkspaceValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblWorkspaceValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWorkspaceValue.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblWorkspaceValue.Location = new System.Drawing.Point(129, 45);
+            this.lblWorkspaceValue.Name = "lblWorkspaceValue";
+            this.lblWorkspaceValue.Size = new System.Drawing.Size(121, 45);
+            this.lblWorkspaceValue.TabIndex = 3;
+            this.lblWorkspaceValue.Text = "Default";
+            this.lblWorkspaceValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(3, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 45);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "管理系统：";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblMgrSysValue
+            // 
+            this.lblMgrSysValue.AutoSize = true;
+            this.lblMgrSysValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblMgrSysValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMgrSysValue.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblMgrSysValue.Location = new System.Drawing.Point(129, 90);
+            this.lblMgrSysValue.Name = "lblMgrSysValue";
+            this.lblMgrSysValue.Size = new System.Drawing.Size(121, 45);
+            this.lblMgrSysValue.TabIndex = 5;
+            this.lblMgrSysValue.Text = "4";
+            this.lblMgrSysValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(3, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 45);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "连接设备:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblConnectionDev
+            // 
+            this.lblConnectionDev.AutoSize = true;
+            this.lblConnectionDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblConnectionDev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblConnectionDev.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblConnectionDev.Location = new System.Drawing.Point(129, 135);
+            this.lblConnectionDev.Name = "lblConnectionDev";
+            this.lblConnectionDev.Size = new System.Drawing.Size(121, 45);
+            this.lblConnectionDev.TabIndex = 7;
+            this.lblConnectionDev.Text = "45";
+            this.lblConnectionDev.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -626,6 +731,13 @@
         private System.Windows.Forms.Label lblSysInfo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserValue;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblWorkspaceValue;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMgrSysValue;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblConnectionDev;
     }
 }
 
