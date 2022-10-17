@@ -38,17 +38,16 @@ namespace MESWinForms.Services
 
                 var targetTestResult = data.results.Where(x => x.updatedAt.Year == targetYear && x.updatedAt.Month == targetMonth);
 
-                var passByMonth = 0d;
+                //var passByMonth = 0d;
                 var failedByMonth = 0d;
                 foreach (var item in targetTestResult)
                 {
-                    passByMonth += item.statusTypeSummary.PASSED;
+                    //passByMonth += item.statusTypeSummary.PASSED;
                     failedByMonth += item.statusTypeSummary.FAILED;
                 }
-                var totalByMonth = passByMonth + failedByMonth;
-
-                var failedRateByMonth = totalByMonth == 0 ? 0 : failedByMonth / totalByMonth;
-                vm.FPYByMonth.Add(targetMonth, failedRateByMonth);
+                //var totalByMonth = passByMonth + failedByMonth;
+                //var failedRateByMonth = totalByMonth == 0 ? 0 : failedByMonth / totalByMonth;
+                vm.FPYByMonth.Add(targetMonth, failedByMonth);
             }
 
             return vm;
