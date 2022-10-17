@@ -88,11 +88,9 @@ namespace MESWinForms
         private async Task RefreshUIAsync()
         {
             // DateTime
-            //var now = DateTime.Now;
-            //lblDateTime.Text = now.Year + "年" + now.Month + "月" + now.Day + "日" +
-            //    DateTime.Now.ToString("hh:mm:ss");
-            //lblDateTime.Refresh();
-
+            var now = DateTime.Now;
+            lblDateTime.Text = now.Year + "年" + now.Month + "月" + now.Day + "日" +
+                DateTime.Now.ToString("hh:mm:ss");
 
             // Left
             await RefreshSysInfoAsync();
