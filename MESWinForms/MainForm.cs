@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
+using ScottPlot;
 
 namespace MESWinForms
 {
@@ -19,7 +20,6 @@ namespace MESWinForms
         private readonly CalibService _calibService;
         private readonly FPYService _fpyService;
         private readonly AlarmService _alarmService;
-
 
         public MainForm(
             SystemInfoService systemInfoService,
@@ -36,6 +36,25 @@ namespace MESWinForms
             lblSysMgr.BackColor = Color.Transparent;
             lblTitleCalib.BackColor = Color.Transparent;
             lblTitleFPY.BackColor = Color.Transparent;
+
+            //fpSysInfoTop.Plot.Palette = Palette.Nord;
+            //double[] values = { 4, 3 };
+
+            //var gauges = fpSysInfoTop.Plot.AddRadialGauge(values);
+            //gauges.Labels = new string[] { "系统总数", "运行系统" };
+
+            //Color[] colors = { Color.FromArgb(92, 173, 210), Color.FromArgb(89, 228, 224) };
+            //gauges.Colors = colors;
+
+            //fpSysInfoTop.Plot.Legend(true);
+
+            //fpSysInfoTop.Plot.Style(Style.Black);
+
+            ////formsPlot3.Plot.SaveFig("radialgauge_legend.png");
+            //fpSysInfoTop.Refresh();
+
+
+
 
             _systemInfoService = systemInfoService;
             _failedTestService = failedTestService;
