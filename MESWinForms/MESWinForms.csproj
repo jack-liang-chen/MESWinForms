@@ -130,6 +130,7 @@
     <Compile Include="MediaTypes\In\AlarmInMediaType.cs" />
     <Compile Include="MediaTypes\In\AssetsInMediaType.cs" />
     <Compile Include="MediaTypes\In\SystemsSummaryInMediaType.cs" />
+    <Compile Include="MediaTypes\In\TagHistoryInMediaType.cs" />
     <Compile Include="MediaTypes\In\TestResultInMediaType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\AlarmService.cs" />
     <Compile Include="Services\SystemInfoService.cs" />
+    <Compile Include="Services\TagHistoryService.cs" />
     <Compile Include="ViewModels\AlarmViewModel.cs" />
     <Compile Include="ViewModels\FPYViewModel.cs" />
     <EmbeddedResource Include="MainForm.resx">
