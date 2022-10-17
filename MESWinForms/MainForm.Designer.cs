@@ -56,9 +56,6 @@
             this.lblSysInfo = new System.Windows.Forms.Label();
             this.tlpRight = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRightCenter = new System.Windows.Forms.Panel();
-            this.tlpRightCenter = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitleFPY = new System.Windows.Forms.Label();
-            this.fpFPY = new ScottPlot.FormsPlot();
             this.tlpRightTop = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitleCalib = new System.Windows.Forms.Label();
             this.fpCalib = new ScottPlot.FormsPlot();
@@ -74,6 +71,8 @@
             this.fpCenterBottom = new ScottPlot.FormsPlot();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
+            this.tlpRightCenter = new System.Windows.Forms.TableLayoutPanel();
+            this.fpFPY = new ScottPlot.FormsPlot();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -88,11 +87,11 @@
             this.tlpLeftTopRightSide.SuspendLayout();
             this.tlpRight.SuspendLayout();
             this.pnlRightCenter.SuspendLayout();
-            this.tlpRightCenter.SuspendLayout();
             this.tlpRightTop.SuspendLayout();
             this.pnlRightBottom.SuspendLayout();
             this.tlpRightBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.tlpRightCenter.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -501,45 +500,6 @@
             this.pnlRightCenter.Size = new System.Drawing.Size(400, 297);
             this.pnlRightCenter.TabIndex = 5;
             // 
-            // tlpRightCenter
-            // 
-            this.tlpRightCenter.BackgroundImage = global::MESWinForms.Properties.Resources.box2;
-            this.tlpRightCenter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tlpRightCenter.ColumnCount = 1;
-            this.tlpRightCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRightCenter.Controls.Add(this.lblTitleFPY, 0, 0);
-            this.tlpRightCenter.Controls.Add(this.fpFPY, 0, 1);
-            this.tlpRightCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRightCenter.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.tlpRightCenter.Location = new System.Drawing.Point(0, 0);
-            this.tlpRightCenter.Name = "tlpRightCenter";
-            this.tlpRightCenter.RowCount = 2;
-            this.tlpRightCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRightCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tlpRightCenter.Size = new System.Drawing.Size(400, 297);
-            this.tlpRightCenter.TabIndex = 8;
-            // 
-            // lblTitleFPY
-            // 
-            this.lblTitleFPY.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitleFPY.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.lblTitleFPY.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblTitleFPY.Location = new System.Drawing.Point(3, 0);
-            this.lblTitleFPY.Name = "lblTitleFPY";
-            this.lblTitleFPY.Size = new System.Drawing.Size(394, 59);
-            this.lblTitleFPY.TabIndex = 0;
-            this.lblTitleFPY.Text = "FPY统计";
-            this.lblTitleFPY.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // fpFPY
-            // 
-            this.fpFPY.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpFPY.Location = new System.Drawing.Point(30, 64);
-            this.fpFPY.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
-            this.fpFPY.Name = "fpFPY";
-            this.fpFPY.Size = new System.Drawing.Size(340, 203);
-            this.fpFPY.TabIndex = 1;
-            // 
             // tlpRightTop
             // 
             this.tlpRightTop.BackgroundImage = global::MESWinForms.Properties.Resources.box2;
@@ -698,6 +658,33 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tlpRightCenter
+            // 
+            this.tlpRightCenter.BackgroundImage = global::MESWinForms.Properties.Resources.box2;
+            this.tlpRightCenter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tlpRightCenter.ColumnCount = 1;
+            this.tlpRightCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRightCenter.Controls.Add(this.fpFPY, 0, 1);
+            this.tlpRightCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRightCenter.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tlpRightCenter.Location = new System.Drawing.Point(0, 0);
+            this.tlpRightCenter.Name = "tlpRightCenter";
+            this.tlpRightCenter.RowCount = 2;
+            this.tlpRightCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tlpRightCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94F));
+            this.tlpRightCenter.Size = new System.Drawing.Size(400, 297);
+            this.tlpRightCenter.TabIndex = 8;
+            // 
+            // fpFPY
+            // 
+            this.fpFPY.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.fpFPY.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpFPY.Location = new System.Drawing.Point(30, 22);
+            this.fpFPY.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
+            this.fpFPY.Name = "fpFPY";
+            this.fpFPY.Size = new System.Drawing.Size(340, 245);
+            this.fpFPY.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -727,11 +714,11 @@
             this.tlpLeftTopRightSide.PerformLayout();
             this.tlpRight.ResumeLayout(false);
             this.pnlRightCenter.ResumeLayout(false);
-            this.tlpRightCenter.ResumeLayout(false);
             this.tlpRightTop.ResumeLayout(false);
             this.pnlRightBottom.ResumeLayout(false);
             this.tlpRightBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.tlpRightCenter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -750,9 +737,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpRightTop;
         private System.Windows.Forms.Label lblTitleCalib;
         private ScottPlot.FormsPlot fpCalib;
-        private System.Windows.Forms.TableLayoutPanel tlpRightCenter;
-        private System.Windows.Forms.Label lblTitleFPY;
-        private ScottPlot.FormsPlot fpFPY;
         private System.Windows.Forms.TableLayoutPanel tlpCenterBottom;
         private System.Windows.Forms.Label lblSysMgr;
         private System.Windows.Forms.Panel pnlRightBottom;
@@ -784,6 +768,8 @@
         private ScottPlot.FormsPlot fpCenterBottom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblDateTime;
+        private System.Windows.Forms.TableLayoutPanel tlpRightCenter;
+        private ScottPlot.FormsPlot fpFPY;
     }
 }
 

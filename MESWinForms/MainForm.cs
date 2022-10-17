@@ -35,7 +35,6 @@ namespace MESWinForms
             lblSysInfo.BackColor = Color.Transparent;
             lblSysMgr.BackColor = Color.Transparent;
             lblTitleCalib.BackColor = Color.Transparent;
-            lblTitleFPY.BackColor = Color.Transparent;
 
             tlpLeftTop.BackColor = Color.Transparent;
             fpCenterBottom.BackColor = Color.Transparent;
@@ -128,8 +127,32 @@ namespace MESWinForms
 
         private async Task RefreshFPYChartAsync()
         {
-            var fpyVm = await _fpyService.GetAll();
-            fpFPY.Plot.AddScatter(fpyVm.FPYByMonth.Keys.ToArray(), fpyVm.FPYByMonth.Values.ToArray());
+            //var fpyVm = await _fpyService.GetAll();
+            //fpFPY.Plot.AddScatter(fpyVm.FPYByMonth.Keys.ToArray(), fpyVm.FPYByMonth.Values.ToArray());
+            //fpFPY.Refresh();
+
+            Func<double, string> customFormatter = y => $"Y={y:N2}";
+
+            double[] values = { 77.3, 77.9, 81.2, 76.1, 79.4, 79.2, 78.7, 83.1, 79.9, 83.7, 82.1, 80.9 };
+            double[] positions = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            var bar = fpFPY.Plot.AddBar(values);
+            bar.Label = "Pass Rate";
+            bar.ShowValuesAboveBars = true;
+            bar.ValueFormatter = customFormatter;
+            string[] labels = { "9/21", "10/21", "11/21", "12/21", "1/22", "2/22", "3/22", "4/22", "5/22", "6/22", "7/22", "8/22" };
+
+            fpFPY.Plot.Title("FPY 统计");
+            fpFPY.Plot.YAxis.Label("FPY");
+            fpFPY.Plot.XAxis.Label("Month");
+
+            fpFPY.Plot.AddBar(values, positions, Color.FromArgb(89, 228, 224));
+            Random rand = new Random(40);
+            double[] ys = { 93, 95, 98, 87, 96, 90, 96, 93, 94, 92, 95, 93 };
+            var line = fpFPY.Plot.AddSignal(ys);
+            line.Label = "FPY";
+            fpFPY.Plot.XTicks(positions, labels);
+            fpFPY.Plot.SetAxisLimits(yMin: 70);
+            fpFPY.Plot.Style(Style.Black);
             fpFPY.Refresh();
         }
 
