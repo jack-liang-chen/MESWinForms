@@ -1,4 +1,5 @@
-﻿using MESWinForms.ViewModels;
+﻿using MESWinForms.MediaTypes.In.Alarm;
+using MESWinForms.ViewModels;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace MESWinForms.Services
         {
             var result = new List<AlarmViewModel>();
 
-            var data = await _dataService.GetAllAlarmsAsync();
+            var data = await _dataService.GetByPostAsync<AlarmInMediaType>("nialarm/v1/query-instances", "{}");
             var index = 0;
             var maxCount = data.filterMatches.Count < 10 ? data.filterMatches.Count() : 10;
             

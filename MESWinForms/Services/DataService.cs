@@ -24,18 +24,18 @@ namespace MESWinForms.Services
             };
         }
 
-        public async Task<AlarmInMediaType> GetAllAlarmsAsync()
-        {
-            var request = new RestRequest("nialarm/v1/query-instances").AddJsonBody("{}");
-            var response = await _client.PostAsync<AlarmInMediaType>(request);
-
-            return response;
-        }
-
         public async Task<T> GetAsync<T>(string resource)
         {
             var request = new RestRequest(resource);
             var response = await _client.GetAsync<T>(request);
+
+            return response;
+        }
+
+        public async Task<T> GetByPostAsync<T>(string resource, string postBodyContent)
+        {
+            var request = new RestRequest(resource).AddJsonBody(postBodyContent);
+            var response = await _client.PostAsync<T>(request);
 
             return response;
         }
