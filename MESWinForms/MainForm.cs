@@ -37,6 +37,8 @@ namespace MESWinForms
             lblTitleCalib.BackColor = Color.Transparent;
             lblTitleFPY.BackColor = Color.Transparent;
 
+            tlpLeftTop.BackColor = Color.Transparent;
+
             //fpSysInfoTop.Plot.Palette = Palette.Nord;
             //double[] values = { 4, 3 };
 
