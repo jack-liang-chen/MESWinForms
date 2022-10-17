@@ -38,6 +38,8 @@ namespace MESWinForms
             lblTitleFPY.BackColor = Color.Transparent;
 
             tlpLeftTop.BackColor = Color.Transparent;
+            fpCenterBottom.BackColor = Color.Transparent;
+
 
             //fpSysInfoTop.Plot.Palette = Palette.Nord;
             //double[] values = { 4, 3 };
@@ -85,6 +87,13 @@ namespace MESWinForms
 
         private async Task RefreshUIAsync()
         {
+            // DateTime
+            //var now = DateTime.Now;
+            //lblDateTime.Text = now.Year + "年" + now.Month + "月" + now.Day + "日" +
+            //    DateTime.Now.ToString("hh:mm:ss");
+            //lblDateTime.Refresh();
+
+
             // Left
             await RefreshSysInfoAsync();
             await RefreshFailedCaseChartAsync();
