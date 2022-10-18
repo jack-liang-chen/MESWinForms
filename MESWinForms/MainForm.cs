@@ -189,7 +189,7 @@ namespace MESWinForms
                     disConnectedDeviceCount, 
                     supportedSeftCalibDevs, 
                     supportedExtCalibDevs });
-            gauges.Labels = new string[] { "设备总数", "已连接设备", "非连接设备", "支持自校准设备", "支持外部校准设备"};
+            gauges.Labels = new string[] { "设备总数", "已连接", "非连接", "自校准", "外部校准"};
             gauges.Colors = new Color[] { 
                 Color.FromArgb(105, 48, 169), 
                 Color.FromArgb(79, 84, 178), 
