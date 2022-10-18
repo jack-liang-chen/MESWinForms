@@ -65,10 +65,6 @@ namespace MESWinForms
             fpCalib.Plot.Style(Style.Black);
             fpCalib.Plot.Legend(true);
 
-            var gauges = fpCalib.Plot.AddRadialGauge(new double[] { 45, 15, 40, 12, 5 });
-            gauges.Labels = new string[] { "设备总数", "非活动设备", "可校准设备", "临近校准日期", "已过校准日期" };
-            gauges.Colors = new Color[] { Color.FromArgb(105, 48, 169), Color.FromArgb(79, 84, 178), Color.FromArgb(63, 116, 217), Color.FromArgb(92, 173, 210), Color.FromArgb(89, 228, 224) };
-
 
             fpCenterBottom.Plot.Style(Style.Black);
             fpFPY.Plot.Title("FPY 统计");
@@ -177,7 +173,29 @@ namespace MESWinForms
 
         private async Task RefreshCalibrationChartAsync()
         {
+            fpCalib.Plot.Clear();
 
+            var data = await _systemInfoService.GetAssetsAsync();
+            var deviceTotalCount = data.totalCount;
+            var disConnectedDeviceCount = data.assets.Where(x => x.location.state.systemConnection == "DISCONNECTED").Count();
+            var connectedDeviceCount = deviceTotalCount - disConnectedDeviceCount;
+            var supportedSeftCalibDevs = data.assets.Where(x => x.supportsSelfCalibration).Count();
+            var supportedExtCalibDevs = data.assets.Where(x => x.supportsExternalCalibration).Count();
+
+            var gauges = fpCalib.Plot.AddRadialGauge(
+                new double[] { 
+                    deviceTotalCount, 
+                    connectedDeviceCount, 
+                    disConnectedDeviceCount, 
+                    supportedSeftCalibDevs, 
+                    supportedExtCalibDevs });
+            gauges.Labels = new string[] { "设备总数", "已连接设备", "非连接设备", "支持自校准设备", "支持外部校准设备"};
+            gauges.Colors = new Color[] { 
+                Color.FromArgb(105, 48, 169), 
+                Color.FromArgb(79, 84, 178), 
+                Color.FromArgb(63, 116, 217), 
+                Color.FromArgb(92, 173, 210), 
+                Color.FromArgb(89, 228, 224) };
 
             fpCalib.Refresh();
         }

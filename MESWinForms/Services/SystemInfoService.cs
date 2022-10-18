@@ -22,6 +22,11 @@ namespace MESWinForms.Services
             return data.connectedCount;
         }
 
+        public async Task<AssetsInMediaType> GetAssetsAsync()
+        { 
+            return await _dataService.GetAsync<AssetsInMediaType>("niapm/v1/assets?skip=0&take=1000");
+        }
+
         public async Task<int> GetConnectionDeviceCountAsync()
         {
             var data = await _dataService.GetAsync<AssetsInMediaType>("niapm/v1/assets?skip=0&take=1000");
