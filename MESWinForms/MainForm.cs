@@ -55,9 +55,12 @@ namespace MESWinForms
             fpCenterBottom.Plot.Title("监控显示");
             fpCenterBottom.Plot.YAxis.Label("值");
 
-            fpCalib.Plot.Title("校准管理");
             fpCalib.Plot.Style(Style.Black);
-
+            fpCalib.Plot.Palette = Palette.Nord;
+            var gauges = fpCalib.Plot.AddRadialGauge(new double[] { 45, 15, 40, 12, 5 });
+            gauges.Labels = new string[] { "设备总数", "非活动设备", "可校准设备", "临近校准日期", "已过校准日期" };
+            gauges.Colors = new Color[] { Color.FromArgb(105, 48, 169), Color.FromArgb(79, 84, 178), Color.FromArgb(63, 116, 217), Color.FromArgb(92, 173, 210), Color.FromArgb(89, 228, 224) };
+            fpCalib.Plot.Legend(true);
 
 
             fpCenterBottom.Plot.Style(Style.Black);
@@ -139,6 +142,8 @@ namespace MESWinForms
         private async Task RefreshCalibrationChartAsync()
         {
 
+
+            fpCalib.Refresh();
         }
 
         private async Task RefreshFPYChartAsync()

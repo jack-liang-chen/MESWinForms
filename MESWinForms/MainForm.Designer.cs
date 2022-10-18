@@ -59,7 +59,6 @@
             this.tlpRightCenter = new System.Windows.Forms.TableLayoutPanel();
             this.fpFPY = new ScottPlot.FormsPlot();
             this.tlpRightTop = new System.Windows.Forms.TableLayoutPanel();
-            this.fpCalib = new ScottPlot.FormsPlot();
             this.pnlRightBottom = new System.Windows.Forms.Panel();
             this.tlpRightBottom = new System.Windows.Forms.TableLayoutPanel();
             this.lvRightBottom = new System.Windows.Forms.ListView();
@@ -71,6 +70,8 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
+            this.fpCalib = new ScottPlot.FormsPlot();
+            this.lblRightTop = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -527,25 +528,18 @@
             this.tlpRightTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tlpRightTop.ColumnCount = 1;
             this.tlpRightTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRightTop.Controls.Add(this.fpCalib, 0, 1);
+            this.tlpRightTop.Controls.Add(this.fpCalib, 0, 2);
+            this.tlpRightTop.Controls.Add(this.lblRightTop, 0, 1);
             this.tlpRightTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRightTop.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.tlpRightTop.Location = new System.Drawing.Point(3, 3);
             this.tlpRightTop.Name = "tlpRightTop";
-            this.tlpRightTop.RowCount = 2;
+            this.tlpRightTop.RowCount = 3;
             this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92F));
+            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.tlpRightTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tlpRightTop.Size = new System.Drawing.Size(499, 388);
             this.tlpRightTop.TabIndex = 7;
-            // 
-            // fpCalib
-            // 
-            this.fpCalib.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCalib.Location = new System.Drawing.Point(30, 36);
-            this.fpCalib.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
-            this.fpCalib.Name = "fpCalib";
-            this.fpCalib.Size = new System.Drawing.Size(439, 322);
-            this.fpCalib.TabIndex = 1;
             // 
             // pnlRightBottom
             // 
@@ -657,6 +651,28 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // fpCalib
+            // 
+            this.fpCalib.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpCalib.Location = new System.Drawing.Point(30, 101);
+            this.fpCalib.Margin = new System.Windows.Forms.Padding(30, 5, 30, 30);
+            this.fpCalib.Name = "fpCalib";
+            this.fpCalib.Size = new System.Drawing.Size(439, 257);
+            this.fpCalib.TabIndex = 1;
+            // 
+            // lblRightTop
+            // 
+            this.lblRightTop.AutoSize = true;
+            this.lblRightTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRightTop.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.lblRightTop.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblRightTop.Location = new System.Drawing.Point(3, 31);
+            this.lblRightTop.Name = "lblRightTop";
+            this.lblRightTop.Size = new System.Drawing.Size(493, 65);
+            this.lblRightTop.TabIndex = 2;
+            this.lblRightTop.Text = "校准管理";
+            this.lblRightTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -688,6 +704,7 @@
             this.pnlRightCenter.ResumeLayout(false);
             this.tlpRightCenter.ResumeLayout(false);
             this.tlpRightTop.ResumeLayout(false);
+            this.tlpRightTop.PerformLayout();
             this.pnlRightBottom.ResumeLayout(false);
             this.tlpRightBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
@@ -707,7 +724,6 @@
         private System.Windows.Forms.Panel pnlCenterBottom;
         private System.Windows.Forms.Panel pnlRightCenter;
         private System.Windows.Forms.TableLayoutPanel tlpRightTop;
-        private ScottPlot.FormsPlot fpCalib;
         private System.Windows.Forms.TableLayoutPanel tlpCenterBottom;
         private System.Windows.Forms.Panel pnlRightBottom;
         private System.Windows.Forms.TableLayoutPanel tlpRightBottom;
@@ -740,6 +756,8 @@
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.TableLayoutPanel tlpRightCenter;
         private ScottPlot.FormsPlot fpFPY;
+        private ScottPlot.FormsPlot fpCalib;
+        private System.Windows.Forms.Label lblRightTop;
     }
 }
 
