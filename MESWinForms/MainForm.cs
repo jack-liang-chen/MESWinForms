@@ -8,6 +8,7 @@ using System.Linq;
 using ScottPlot;
 using System.Configuration;
 using System.Collections.Generic;
+using AForge.Video;
 
 namespace MESWinForms
 {
@@ -16,6 +17,7 @@ namespace MESWinForms
         private const int QueueCapacity = 40;
         private Queue<double> _temperatureQueue = new Queue<double>();
         private Queue<double> _pressureQueue = new Queue<double>();
+        private Queue<double> _lightQueue = new Queue<double>();
 
         private VideoCaptureDevice _videoCaptureDevice;
         private readonly SystemInfoService _systemInfoService;
@@ -85,7 +87,7 @@ namespace MESWinForms
 
         private async void MainForm_Load(object sender, EventArgs eventArgs)
         {
-            _videoCaptureDevice = _cameraService.StartCamera((s, e) => pbCamera.Image = (Bitmap)e.Frame.Clone());
+            _videoCaptureDevice = _cameraService.StartCamera(DisplayCamera);
             await RefreshUIAsync();
 
             var timer = new Timer
@@ -97,6 +99,11 @@ namespace MESWinForms
                 await RefreshUIAsync();
             };
             timer.Start();  
+        }
+
+        private void DisplayCamera(object sender, NewFrameEventArgs e)
+        {
+            pbCamera.Image = (Bitmap)e.Frame.Clone();
         }
 
         private async Task RefreshUIAsync()
@@ -154,7 +161,15 @@ namespace MESWinForms
 
             fpCenterBottom.Plot.AddSignal(_pressureQueue.ToArray());
 
-            // Others
+            // Light
+            var currentLightData = await _daqService.GetCurrentTagValue("Light.tag");
+            var currentLightValue = double.Parse(currentLightData);
+            _lightQueue.Enqueue(currentLightValue);
+
+            if (_lightQueue.Count == QueueCapacity)
+                _lightQueue.Dequeue();
+
+            fpCenterBottom.Plot.AddSignal(_lightQueue.ToArray());
 
 
             fpCenterBottom.Refresh();
