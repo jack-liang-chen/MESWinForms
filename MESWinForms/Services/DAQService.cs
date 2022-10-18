@@ -23,5 +23,11 @@ namespace MESWinForms.Services
             var data = await _dataService.GetByPostAsync<TagHistoryInMediaType>("nitaghistorian/v2/tags/query-history", "{\"path\": \"" + path + "\"}");
             return data.values;
         }
+
+        public async Task<string> GetCurrentTagValue(string path)
+        {
+            var data = await _dataService.GetAsync<TagCurrentValueInMediaType>($"nitag/v2/tags-with-values?path={path}&skip=0");
+            return data.tagsWithValues.First().current.value.value;
+        }
     }
 }

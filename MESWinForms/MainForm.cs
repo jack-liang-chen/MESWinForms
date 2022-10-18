@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
 using ScottPlot;
+using System.Configuration;
+using System.Collections.Generic;
 
 namespace MESWinForms
 {
     public partial class MainForm : Form
     {
-        private VideoCaptureDevice _videoCaptureDevice;
+        private const int QueueCapacity = 40;
+        private Queue<double> _temperatureQueue = new Queue<double>();
+        private Queue<double> _pressureQueue = new Queue<double>();
 
+        private VideoCaptureDevice _videoCaptureDevice;
         private readonly SystemInfoService _systemInfoService;
         private readonly FailedTestService _failedTestService;
         private readonly CameraService _cameraService;
@@ -56,11 +61,11 @@ namespace MESWinForms
             fpCenterBottom.Plot.YAxis.Label("值");
 
             fpCalib.Plot.Style(Style.Black);
-            fpCalib.Plot.Palette = Palette.Nord;
+            fpCalib.Plot.Legend(true);
+
             var gauges = fpCalib.Plot.AddRadialGauge(new double[] { 45, 15, 40, 12, 5 });
             gauges.Labels = new string[] { "设备总数", "非活动设备", "可校准设备", "临近校准日期", "已过校准日期" };
             gauges.Colors = new Color[] { Color.FromArgb(105, 48, 169), Color.FromArgb(79, 84, 178), Color.FromArgb(63, 116, 217), Color.FromArgb(92, 173, 210), Color.FromArgb(89, 228, 224) };
-            fpCalib.Plot.Legend(true);
 
 
             fpCenterBottom.Plot.Style(Style.Black);
@@ -127,13 +132,29 @@ namespace MESWinForms
 
         private async Task RefreshDAQChartAsync()
         {
-            var temperatures = await _daqService.GetAllTagHistoryValues("tempetaure.tag");
-            var tempYValues = temperatures.Select(x => x.value).ToArray();
-            fpCenterBottom.Plot.AddSignal(tempYValues);
+            fpCenterBottom.Plot.Clear();
 
-            var presures = await _daqService.GetAllTagHistoryValues("Presure.tag");
-            var presuresYValues = presures.Select(x => x.value).ToArray();
-            fpCenterBottom.Plot.AddSignal(presuresYValues);
+            // Temperature
+            var currentTempData = await _daqService.GetCurrentTagValue("tempetaure.tag");
+            var currentTempValue = double.Parse(currentTempData);
+            _temperatureQueue.Enqueue(currentTempValue);
+
+            if (_temperatureQueue.Count == QueueCapacity)
+                _temperatureQueue.Dequeue();
+
+            fpCenterBottom.Plot.AddSignal(_temperatureQueue.ToArray());
+
+            // Pressure
+            var currentPressureData = await _daqService.GetCurrentTagValue("Presure.tag");
+            var currentPressureValue = double.Parse(currentPressureData);
+            _pressureQueue.Enqueue(currentPressureValue);
+
+            if (_pressureQueue.Count == QueueCapacity)
+                _pressureQueue.Dequeue();
+
+            fpCenterBottom.Plot.AddSignal(_pressureQueue.ToArray());
+
+            // Others
 
 
             fpCenterBottom.Refresh();
