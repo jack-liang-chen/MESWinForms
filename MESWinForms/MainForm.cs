@@ -9,6 +9,7 @@ using ScottPlot;
 using System.Configuration;
 using System.Collections.Generic;
 using AForge.Video;
+using ScottPlot.Statistics;
 
 namespace MESWinForms
 {
@@ -27,6 +28,7 @@ namespace MESWinForms
         private readonly CalibService _calibService;
         private readonly FPYService _fpyService;
         private readonly AlarmService _alarmService;
+        private readonly Logger _logger;
 
         public MainForm(
             SystemInfoService systemInfoService,
@@ -35,7 +37,8 @@ namespace MESWinForms
             DAQService daqService,
             CalibService calibService,
             FPYService fpyService,
-            AlarmService alarmService)
+            AlarmService alarmService,
+            Logger logger)
         {
             InitializeComponent();
 
@@ -51,6 +54,9 @@ namespace MESWinForms
 
 
             fpFailedCaseTop.Plot.Title("Failed测试分析");
+            fpFailedCaseTop.Plot.YAxis.Label("计数 (#)");
+            fpFailedCaseTop.Plot.SetAxisLimits(yMin: 0);
+            fpFailedCaseTop.Plot.SetAxisLimits(yMin: 0, yAxisIndex: 1);
             fpFailedCaseTop.Plot.Style(Style.Black);
 
 
@@ -79,6 +85,7 @@ namespace MESWinForms
             _calibService = calibService;
             _fpyService = fpyService;
             _alarmService = alarmService;
+            _logger = logger;
         }
 
         private async void MainForm_Load(object sender, EventArgs eventArgs)
@@ -99,7 +106,14 @@ namespace MESWinForms
 
         private void DisplayCamera(object sender, NewFrameEventArgs e)
         {
-            pbCamera.Image = (Bitmap)e.Frame.Clone();
+            try
+            {
+                pbCamera.Image = (Bitmap)e.Frame.Clone();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex.ToString());
+            }
         }
 
         private async Task RefreshUIAsync()
@@ -130,7 +144,23 @@ namespace MESWinForms
 
         private async Task RefreshFailedCaseChartAsync()
         {
-        
+            fpFailedCaseTop.Plot.Clear();
+
+            var values = DataGen.RandomNormal(new Random(0), pointCount: 1234, mean: 22.4, stdDev: 3.6);
+
+            (var counts, var binEdges) = Common.Histogram(values, min: 14, max: 32, binSize: 0.8);
+            var leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
+            fpFailedCaseTop.Plot.AddBar(values: counts, positions: leftEdges);
+
+            var smoothEdges = DataGen.Range(start: binEdges.First(), stop: binEdges.Last(), step: 0.1, includeStop: true);
+            var smoothDensities = Common.ProbabilityDensity(values, smoothEdges, percent: true);
+            var probPlot = fpFailedCaseTop.Plot.AddScatterLines(
+                xs: smoothEdges,
+                ys: smoothDensities);
+            probPlot.YAxisIndex = 1;
+            fpFailedCaseTop.Plot.YAxis2.Ticks(true);
+
+            fpFailedCaseTop.Refresh();
         }
 
         private async Task RefreshDAQChartAsync()
