@@ -143,7 +143,6 @@ namespace MESWinForms
 
             // Left
             await RefreshSysInfoAsync();
-            //await RefreshFailedCaseChartAsync();
 
             // Center
             await RefreshDAQChartAsync();
@@ -162,7 +161,7 @@ namespace MESWinForms
 
         private void RefreshFailedCaseChart()
         {
-            //fpFailedCaseTop.Plot.Clear();
+            fpFailedCaseTop.Plot.Clear();
             var values = DataGen.RandomNormal(new Random(0), pointCount: 1234, mean: 22.4, stdDev: 3.6);
             (var counts, var binEdges) = Common.Histogram(values, min: 14, max: 32, binSize: 0.8);
             var leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
@@ -174,7 +173,7 @@ namespace MESWinForms
                 ys: smoothDensities);
             fpFailedCaseTop.Refresh();
 
-            //fpFailedCaseBottom.Plot.Clear();
+            fpFailedCaseBottom.Plot.Clear();
             var bottomPie = fpFailedCaseBottom.Plot.AddPie(new double[] { 43, 283, 76, 184 });
             Color[] colors = { Color.FromArgb(79, 84, 178), Color.FromArgb(63, 116, 217), Color.FromArgb(92, 173, 210), Color.FromArgb(89, 228, 224) };
             bottomPie.SliceFillColors = colors;

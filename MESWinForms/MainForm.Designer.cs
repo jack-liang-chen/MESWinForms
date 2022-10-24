@@ -255,29 +255,29 @@
             this.tlpLeftBottom.Location = new System.Drawing.Point(3, 431);
             this.tlpLeftBottom.Name = "tlpLeftBottom";
             this.tlpLeftBottom.RowCount = 4;
-            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44F));
-            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43F));
-            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.454341F));
+            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.94334F));
+            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.94334F));
+            this.tlpLeftBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.658964F));
             this.tlpLeftBottom.Size = new System.Drawing.Size(601, 423);
             this.tlpLeftBottom.TabIndex = 8;
             // 
             // fpFailedCaseTop
             // 
             this.fpFailedCaseTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpFailedCaseTop.Location = new System.Drawing.Point(25, 38);
+            this.fpFailedCaseTop.Location = new System.Drawing.Point(25, 36);
             this.fpFailedCaseTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.fpFailedCaseTop.Name = "fpFailedCaseTop";
-            this.fpFailedCaseTop.Size = new System.Drawing.Size(550, 176);
+            this.fpFailedCaseTop.Size = new System.Drawing.Size(550, 175);
             this.fpFailedCaseTop.TabIndex = 0;
             // 
             // fpFailedCaseBottom
             // 
             this.fpFailedCaseBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpFailedCaseBottom.Location = new System.Drawing.Point(25, 224);
+            this.fpFailedCaseBottom.Location = new System.Drawing.Point(25, 221);
             this.fpFailedCaseBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.fpFailedCaseBottom.Name = "fpFailedCaseBottom";
-            this.fpFailedCaseBottom.Size = new System.Drawing.Size(550, 171);
+            this.fpFailedCaseBottom.Size = new System.Drawing.Size(550, 175);
             this.fpFailedCaseBottom.TabIndex = 1;
             // 
             // tlpLeftTop
