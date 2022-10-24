@@ -154,11 +154,9 @@ namespace MESWinForms
 
             var smoothEdges = DataGen.Range(start: binEdges.First(), stop: binEdges.Last(), step: 0.1, includeStop: true);
             var smoothDensities = Common.ProbabilityDensity(values, smoothEdges, percent: true);
-            var probPlot = fpFailedCaseTop.Plot.AddScatterLines(
+            fpFailedCaseTop.Plot.AddScatterLines(
                 xs: smoothEdges,
                 ys: smoothDensities);
-            probPlot.YAxisIndex = 1;
-            fpFailedCaseTop.Plot.YAxis2.Ticks(true);
 
             fpFailedCaseTop.Refresh();
         }
