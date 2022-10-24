@@ -33,6 +33,10 @@
             this.pnlCenterBottom = new System.Windows.Forms.Panel();
             this.tlpCenterBottom = new System.Windows.Forms.TableLayoutPanel();
             this.fpCenterBottom = new ScottPlot.FormsPlot();
+            this.tplCenterTop = new System.Windows.Forms.TableLayoutPanel();
+            this.tplCenterTopRight = new System.Windows.Forms.TableLayoutPanel();
+            this.pbCamera = new System.Windows.Forms.PictureBox();
+            this.tplCenterTopLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftBottom = new System.Windows.Forms.TableLayoutPanel();
             this.fpFailedCaseTop = new ScottPlot.FormsPlot();
@@ -70,14 +74,13 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.tplCenterTop = new System.Windows.Forms.TableLayoutPanel();
-            this.tplCenterTopRight = new System.Windows.Forms.TableLayoutPanel();
-            this.tplCenterTopLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.pbCamera = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
             this.tlpCenterBottom.SuspendLayout();
+            this.tplCenterTop.SuspendLayout();
+            this.tplCenterTopRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             this.tlpLeft.SuspendLayout();
             this.tlpLeftBottom.SuspendLayout();
             this.tlpLeftTop.SuspendLayout();
@@ -91,9 +94,6 @@
             this.pnlRightBottom.SuspendLayout();
             this.tlpRightBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.tplCenterTop.SuspendLayout();
-            this.tplCenterTopRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -170,6 +170,59 @@
             this.fpCenterBottom.Name = "fpCenterBottom";
             this.fpCenterBottom.Size = new System.Drawing.Size(823, 237);
             this.fpCenterBottom.TabIndex = 1;
+            // 
+            // tplCenterTop
+            // 
+            this.tplCenterTop.ColumnCount = 2;
+            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplCenterTop.Controls.Add(this.tplCenterTopRight, 1, 0);
+            this.tplCenterTop.Controls.Add(this.tplCenterTopLeft, 0, 0);
+            this.tplCenterTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tplCenterTop.Location = new System.Drawing.Point(3, 3);
+            this.tplCenterTop.Name = "tplCenterTop";
+            this.tplCenterTop.RowCount = 1;
+            this.tplCenterTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tplCenterTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 551F));
+            this.tplCenterTop.Size = new System.Drawing.Size(913, 551);
+            this.tplCenterTop.TabIndex = 8;
+            // 
+            // tplCenterTopRight
+            // 
+            this.tplCenterTopRight.ColumnCount = 1;
+            this.tplCenterTopRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tplCenterTopRight.Controls.Add(this.pbCamera, 0, 0);
+            this.tplCenterTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tplCenterTopRight.Location = new System.Drawing.Point(459, 3);
+            this.tplCenterTopRight.Name = "tplCenterTopRight";
+            this.tplCenterTopRight.RowCount = 2;
+            this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tplCenterTopRight.Size = new System.Drawing.Size(451, 545);
+            this.tplCenterTopRight.TabIndex = 0;
+            // 
+            // pbCamera
+            // 
+            this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCamera.Location = new System.Drawing.Point(3, 3);
+            this.pbCamera.Name = "pbCamera";
+            this.pbCamera.Size = new System.Drawing.Size(445, 348);
+            this.pbCamera.TabIndex = 1;
+            this.pbCamera.TabStop = false;
+            // 
+            // tplCenterTopLeft
+            // 
+            this.tplCenterTopLeft.ColumnCount = 1;
+            this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tplCenterTopLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tplCenterTopLeft.Location = new System.Drawing.Point(3, 3);
+            this.tplCenterTopLeft.Name = "tplCenterTopLeft";
+            this.tplCenterTopLeft.RowCount = 2;
+            this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplCenterTopLeft.Size = new System.Drawing.Size(450, 545);
+            this.tplCenterTopLeft.TabIndex = 1;
             // 
             // tlpLeft
             // 
@@ -654,59 +707,6 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tplCenterTop
-            // 
-            this.tplCenterTop.ColumnCount = 2;
-            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTop.Controls.Add(this.tplCenterTopRight, 1, 0);
-            this.tplCenterTop.Controls.Add(this.tplCenterTopLeft, 0, 0);
-            this.tplCenterTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tplCenterTop.Location = new System.Drawing.Point(3, 3);
-            this.tplCenterTop.Name = "tplCenterTop";
-            this.tplCenterTop.RowCount = 1;
-            this.tplCenterTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplCenterTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tplCenterTop.Size = new System.Drawing.Size(913, 551);
-            this.tplCenterTop.TabIndex = 8;
-            // 
-            // tplCenterTopRight
-            // 
-            this.tplCenterTopRight.ColumnCount = 1;
-            this.tplCenterTopRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplCenterTopRight.Controls.Add(this.pbCamera, 0, 0);
-            this.tplCenterTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tplCenterTopRight.Location = new System.Drawing.Point(459, 3);
-            this.tplCenterTopRight.Name = "tplCenterTopRight";
-            this.tplCenterTopRight.RowCount = 2;
-            this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tplCenterTopRight.Size = new System.Drawing.Size(451, 545);
-            this.tplCenterTopRight.TabIndex = 0;
-            // 
-            // tplCenterTopLeft
-            // 
-            this.tplCenterTopLeft.ColumnCount = 1;
-            this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tplCenterTopLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tplCenterTopLeft.Location = new System.Drawing.Point(3, 3);
-            this.tplCenterTopLeft.Name = "tplCenterTopLeft";
-            this.tplCenterTopLeft.RowCount = 2;
-            this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTopLeft.Size = new System.Drawing.Size(450, 545);
-            this.tplCenterTopLeft.TabIndex = 1;
-            // 
-            // pbCamera
-            // 
-            this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCamera.Location = new System.Drawing.Point(3, 3);
-            this.pbCamera.Name = "pbCamera";
-            this.pbCamera.Size = new System.Drawing.Size(445, 348);
-            this.pbCamera.TabIndex = 1;
-            this.pbCamera.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -724,6 +724,9 @@
             this.tlpCenter.ResumeLayout(false);
             this.pnlCenterBottom.ResumeLayout(false);
             this.tlpCenterBottom.ResumeLayout(false);
+            this.tplCenterTop.ResumeLayout(false);
+            this.tplCenterTopRight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             this.tlpLeft.ResumeLayout(false);
             this.tlpLeftBottom.ResumeLayout(false);
             this.tlpLeftTop.ResumeLayout(false);
@@ -740,9 +743,6 @@
             this.pnlRightBottom.ResumeLayout(false);
             this.tlpRightBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.tplCenterTop.ResumeLayout(false);
-            this.tplCenterTopRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             this.ResumeLayout(false);
 
         }

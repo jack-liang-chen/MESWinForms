@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
 using ScottPlot;
-using System.Configuration;
 using System.Collections.Generic;
 using AForge.Video;
 using ScottPlot.Statistics;
@@ -47,10 +46,31 @@ namespace MESWinForms
             fpCenterBottom.BackColor = Color.Transparent;
 
             fpSysInfoTop.Plot.Style(Style.Black);
-
+            fpSysInfoTop.Plot.Legend(true);
 
             fpSysInfoBottom.Plot.Style(Style.Black);
+            fpSysInfoBottom.Plot.Legend(true);
 
+            // Top Chart
+            fpSysInfoTop.Plot.Clear();
+            var topGauges = fpSysInfoTop.Plot.AddRadialGauge(new double[] {
+                4,3
+            });
+            topGauges.Labels = new string[] { "系统总数", "运行系统" };
+            topGauges.Colors = new Color[] { Color.FromArgb(105, 48, 169),
+                Color.FromArgb(79, 84, 178)};
+
+            fpSysInfoTop.Refresh();
+
+            // Bottom Chart
+            fpSysInfoBottom.Plot.Clear();
+            var bottomGauges = fpSysInfoBottom.Plot.AddRadialGauge(new double[] {
+                260,135
+            });
+            bottomGauges.Labels = new string[] { "测试计划", "已完成" };
+            bottomGauges.Colors = new Color[] { Color.FromArgb(105, 48, 169),
+                Color.FromArgb(79, 84, 178)};
+            fpSysInfoBottom.Refresh();
 
 
             fpFailedCaseTop.Plot.Title("Failed测试分析");
@@ -58,11 +78,9 @@ namespace MESWinForms
             fpFailedCaseTop.Plot.SetAxisLimits(yMin: 0);
             fpFailedCaseTop.Plot.SetAxisLimits(yMin: 0, yAxisIndex: 1);
             fpFailedCaseTop.Plot.Style(Style.Black);
-
-
             fpFailedCaseBottom.Plot.Title("Failed测试统计");
             fpFailedCaseBottom.Plot.Style(Style.Black);
-
+            RefreshFailedCaseChart();
 
 
             fpCenterBottom.Plot.Title("监控显示");
@@ -125,7 +143,7 @@ namespace MESWinForms
 
             // Left
             await RefreshSysInfoAsync();
-            await RefreshFailedCaseChartAsync();
+            //await RefreshFailedCaseChartAsync();
 
             // Center
             await RefreshDAQChartAsync();
@@ -142,23 +160,32 @@ namespace MESWinForms
             lblConnectionDev.Text = (await _systemInfoService.GetConnectionDeviceCountAsync()).ToString();
         }
 
-        private async Task RefreshFailedCaseChartAsync()
+        private void RefreshFailedCaseChart()
         {
-            fpFailedCaseTop.Plot.Clear();
-
+            //fpFailedCaseTop.Plot.Clear();
             var values = DataGen.RandomNormal(new Random(0), pointCount: 1234, mean: 22.4, stdDev: 3.6);
-
             (var counts, var binEdges) = Common.Histogram(values, min: 14, max: 32, binSize: 0.8);
             var leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
             fpFailedCaseTop.Plot.AddBar(values: counts, positions: leftEdges);
-
             var smoothEdges = DataGen.Range(start: binEdges.First(), stop: binEdges.Last(), step: 0.1, includeStop: true);
             var smoothDensities = Common.ProbabilityDensity(values, smoothEdges, percent: true);
             fpFailedCaseTop.Plot.AddScatterLines(
                 xs: smoothEdges,
                 ys: smoothDensities);
-
             fpFailedCaseTop.Refresh();
+
+            //fpFailedCaseBottom.Plot.Clear();
+            var bottomPie = fpFailedCaseBottom.Plot.AddPie(new double[] { 43, 283, 76, 184 });
+            Color[] colors = { Color.FromArgb(79, 84, 178), Color.FromArgb(63, 116, 217), Color.FromArgb(92, 173, 210), Color.FromArgb(89, 228, 224) };
+            bottomPie.SliceFillColors = colors;
+            bottomPie.SliceLabels = new string[] { "Jes", "GPIO", "VISA", "Jit" };
+            bottomPie.ShowPercentages = true;
+            bottomPie.ShowValues = false;
+            bottomPie.ShowLabels = true;
+            fpFailedCaseBottom.Plot.Title("Failed测试统计");
+            fpFailedCaseBottom.Plot.Legend();
+            fpFailedCaseBottom.Plot.Style(Style.Black);
+            fpFailedCaseBottom.Refresh();
         }
 
         private async Task RefreshDAQChartAsync()
