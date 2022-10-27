@@ -35,6 +35,11 @@
             this.fpCenterBottom = new ScottPlot.FormsPlot();
             this.tplCenterTop = new System.Windows.Forms.TableLayoutPanel();
             this.tplCenterTopRight = new System.Windows.Forms.TableLayoutPanel();
+            this.lvCenterDevices = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.tplCenterTopLeft = new System.Windows.Forms.TableLayoutPanel();
             this.fpCenterLeftTop = new ScottPlot.FormsPlot();
@@ -76,11 +81,7 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.lvCenterDevices = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -208,6 +209,47 @@
             this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tplCenterTopRight.Size = new System.Drawing.Size(634, 545);
             this.tplCenterTopRight.TabIndex = 0;
+            // 
+            // lvCenterDevices
+            // 
+            this.lvCenterDevices.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lvCenterDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader9,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.lvCenterDevices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCenterDevices.ForeColor = System.Drawing.SystemColors.Info;
+            this.lvCenterDevices.HideSelection = false;
+            this.lvCenterDevices.Location = new System.Drawing.Point(3, 357);
+            this.lvCenterDevices.Name = "lvCenterDevices";
+            this.lvCenterDevices.Size = new System.Drawing.Size(628, 185);
+            this.lvCenterDevices.TabIndex = 2;
+            this.lvCenterDevices.UseCompatibleStateImageBehavior = false;
+            this.lvCenterDevices.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "设备名称";
+            this.columnHeader6.Width = 80;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "序列号";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 106;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "厂商";
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader11.Width = 96;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "模型";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 132;
             // 
             // pbCamera
             // 
@@ -391,6 +433,7 @@
             this.tlpLeftTopRightSide.Controls.Add(this.lblMgrSysValue, 1, 2);
             this.tlpLeftTopRightSide.Controls.Add(this.label4, 0, 3);
             this.tlpLeftTopRightSide.Controls.Add(this.lblConnectionDev, 1, 3);
+            this.tlpLeftTopRightSide.Controls.Add(this.label6, 0, 4);
             this.tlpLeftTopRightSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeftTopRightSide.Location = new System.Drawing.Point(3, 3);
             this.tlpLeftTopRightSide.Name = "tlpLeftTopRightSide";
@@ -413,6 +456,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
@@ -426,6 +470,7 @@
             this.lblUserValue.AutoSize = true;
             this.lblUserValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblUserValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUserValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblUserValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblUserValue.Location = new System.Drawing.Point(110, 0);
             this.lblUserValue.Name = "lblUserValue";
@@ -439,6 +484,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
             this.label2.Location = new System.Drawing.Point(3, 31);
             this.label2.Name = "label2";
@@ -452,6 +498,7 @@
             this.lblWorkspaceValue.AutoSize = true;
             this.lblWorkspaceValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblWorkspaceValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWorkspaceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblWorkspaceValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblWorkspaceValue.Location = new System.Drawing.Point(110, 31);
             this.lblWorkspaceValue.Name = "lblWorkspaceValue";
@@ -465,6 +512,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
             this.label3.Location = new System.Drawing.Point(3, 62);
             this.label3.Name = "label3";
@@ -478,6 +526,7 @@
             this.lblMgrSysValue.AutoSize = true;
             this.lblMgrSysValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMgrSysValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMgrSysValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblMgrSysValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblMgrSysValue.Location = new System.Drawing.Point(110, 62);
             this.lblMgrSysValue.Name = "lblMgrSysValue";
@@ -491,6 +540,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
             this.label4.Location = new System.Drawing.Point(3, 93);
             this.label4.Name = "label4";
@@ -504,6 +554,7 @@
             this.lblConnectionDev.AutoSize = true;
             this.lblConnectionDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblConnectionDev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblConnectionDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblConnectionDev.ForeColor = System.Drawing.SystemColors.Info;
             this.lblConnectionDev.Location = new System.Drawing.Point(110, 93);
             this.lblConnectionDev.Name = "lblConnectionDev";
@@ -735,46 +786,16 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lvCenterDevices
+            // label6
             // 
-            this.lvCenterDevices.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.lvCenterDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader9,
-            this.columnHeader11,
-            this.columnHeader12});
-            this.lvCenterDevices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCenterDevices.ForeColor = System.Drawing.SystemColors.Info;
-            this.lvCenterDevices.HideSelection = false;
-            this.lvCenterDevices.Location = new System.Drawing.Point(3, 357);
-            this.lvCenterDevices.Name = "lvCenterDevices";
-            this.lvCenterDevices.Size = new System.Drawing.Size(628, 185);
-            this.lvCenterDevices.TabIndex = 2;
-            this.lvCenterDevices.UseCompatibleStateImageBehavior = false;
-            this.lvCenterDevices.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "设备名称";
-            this.columnHeader6.Width = 80;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "序列号";
-            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader9.Width = 106;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "厂商";
-            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader11.Width = 96;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "模型";
-            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 132;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(3, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 41);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "温度";
             // 
             // MainForm
             // 
@@ -872,6 +893,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.Label label6;
     }
 }
 
