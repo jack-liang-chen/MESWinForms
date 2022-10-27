@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="MediaTypes\In\AlarmInMediaType.cs" />
     <Compile Include="MediaTypes\In\AssetsInMediaType.cs" />
+    <Compile Include="MediaTypes\In\AssetSummaryInMediaType.cs" />
     <Compile Include="MediaTypes\In\SystemsSummaryInMediaType.cs" />
     <Compile Include="MediaTypes\In\TagCurrentValueInMediaType.cs" />
     <Compile Include="MediaTypes\In\TagHistoryInMediaType.cs" />
@@ -139,7 +140,6 @@
     <Compile Include="Services\CameraService.cs" />
     <Compile Include="Services\DAQService.cs" />
     <Compile Include="Services\DataService.cs" />
-    <Compile Include="Services\DeviceService.cs" />
     <Compile Include="Services\FailedTestService.cs" />
     <Compile Include="Services\FPYService.cs" />
     <Compile Include="Services\Logger.cs" />

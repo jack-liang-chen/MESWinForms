@@ -757,7 +757,7 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "名称";
+            this.columnHeader6.Text = "设备名称";
             this.columnHeader6.Width = 80;
             // 
             // columnHeader7

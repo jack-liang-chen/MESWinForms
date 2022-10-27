@@ -31,6 +31,7 @@ namespace MESWinForms
         private readonly Logger _logger;
 
         private AssetsInMediaType _assets;
+        private AssetSummaryInMediaType _assetSummary;
 
         public MainForm(
             SystemInfoService systemInfoService,
@@ -97,36 +98,7 @@ namespace MESWinForms
             fpFPY.Plot.Title("FPY 统计");
             fpFPY.Plot.YAxis.Label("FPY");
             fpFPY.Plot.XAxis.Label("月");
-            fpFPY.Plot.Style(Style.Black);
-
-
-            // Center Charts
-            double[] values = { 779, 586 };
-            string centerText = $"{values[0] / values.Sum() * 100:00.0}%";
-            Color color1 = Color.FromArgb(255, 0, 150, 200);
-            Color color2 = Color.FromArgb(100, 0, 150, 200);
-            var pie = fpCenterLeftTop.Plot.AddPie(values);
-            pie.DonutSize = .6;
-            pie.DonutLabel = centerText;
-            pie.CenterFont.Color = color1;
-            pie.OutlineSize = 2;
-            pie.SliceFillColors = new Color[] { color1, color2 };
-            fpCenterLeftTop.Plot.Style(Style.Black);
-            fpCenterLeftTop.Refresh();
-
-
-            double[] values2 = { 779, 586 };
-            string centerText2 = $"{values2[0] / values2.Sum() * 100:00.0}%";
-            Color color21 = Color.FromArgb(255, 0, 150, 200);
-            Color color22 = Color.FromArgb(100, 0, 150, 200);
-            var pie2 = fpCenterLeftBottom.Plot.AddPie(values2);
-            pie2.DonutSize = .6;
-            pie2.DonutLabel = centerText2;
-            pie2.CenterFont.Color = color21;
-            pie2.OutlineSize = 2;
-            pie2.SliceFillColors = new Color[] { color21, color22 };
-            fpCenterLeftBottom.Plot.Style(Style.Black);
-            fpCenterLeftBottom.Refresh();
+            fpFPY.Plot.Style(Style.Black);            
 
             _systemInfoService = systemInfoService;
             _failedTestService = failedTestService;
@@ -141,6 +113,7 @@ namespace MESWinForms
         private async void MainForm_Load(object sender, EventArgs eventArgs)
         {
             _assets = await _systemInfoService.GetAssetsAsync();
+            _assetSummary = await _systemInfoService.GetAssetSummaryAsync();
             _videoCaptureDevice = _cameraService.StartCamera(DisplayCamera);
             await GetSysInfoAsync();
             GetCalibrationChart();
@@ -162,6 +135,12 @@ namespace MESWinForms
             };
             timer.Start();  
         }
+        
+        private async Task GetSysInfoAsync()
+        {
+            lblMgrSysValue.Text = (await _systemInfoService.GetSystemsCountAsync()).ToString();
+            lblConnectionDev.Text = (await _systemInfoService.GetConnectionDeviceCountAsync()).ToString();
+        }
 
         private void DisplayCamera(object sender, NewFrameEventArgs e)
         {
@@ -177,18 +156,44 @@ namespace MESWinForms
 
         private void GetDevicesInfo()
         {
+            var total = _assetSummary.total;
+            var inUse = _assetSummary.inUse;
+            var active = _assetSummary.active;
+            
+            double[] values = { inUse, total - inUse };
+            string centerText = $"{values[0] / total * 100:00.0}%";
+            Color color1 = Color.FromArgb(255, 0, 150, 200);
+            Color color2 = Color.FromArgb(100, 0, 150, 200);
+            var pie = fpCenterLeftTop.Plot.AddPie(values);
+            pie.DonutSize = .6;
+            pie.DonutLabel = centerText;
+            pie.CenterFont.Color = color1;
+            pie.OutlineSize = 2;
+            pie.SliceFillColors = new Color[] { color1, color2 };
+            fpCenterLeftTop.Plot.Style(Style.Black);
+            fpCenterLeftTop.Plot.Title("设备使用率");
+            fpCenterLeftTop.Refresh();
+
+            double[] values2 = { active, total - active };
+            string centerText2 = $"{values2[0] / total * 100:00.0}%";
+            Color color21 = Color.FromArgb(255, 0, 150, 200);
+            Color color22 = Color.FromArgb(100, 0, 150, 200);
+            var pie2 = fpCenterLeftBottom.Plot.AddPie(values2);
+            pie2.DonutSize = .6;
+            pie2.DonutLabel = centerText2;
+            pie2.CenterFont.Color = color21;
+            pie2.OutlineSize = 2;
+            pie2.SliceFillColors = new Color[] { color21, color22 };
+            fpCenterLeftBottom.Plot.Style(Style.Black);
+            fpCenterLeftBottom.Plot.Title("设备激活率");
+            fpCenterLeftBottom.Refresh();
+
             foreach (var vm in _assets.assets)
             {
                 lvCenterDevices.Items.Add(
                     new ListViewItem(
                         new string[] { vm.name, vm.assetType, vm.serialNumber, vm.vendorName, vm.modelName }));
             }
-        }
-
-        private async Task GetSysInfoAsync()
-        {
-            lblMgrSysValue.Text = (await _systemInfoService.GetSystemsCountAsync()).ToString();
-            lblConnectionDev.Text = (await _systemInfoService.GetConnectionDeviceCountAsync()).ToString();
         }
 
         private void RefreshFailedCaseChart()
