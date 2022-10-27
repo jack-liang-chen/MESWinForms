@@ -238,6 +238,8 @@ namespace MESWinForms
 
             fpCenterBottom.Plot.AddSignal(_temperatureQueue.ToArray());
 
+            lblTemperature.Text = String.Format("{0:N2}", currentTempValue);
+
             // Pressure
             var currentPressureData = await _daqService.GetCurrentTagValue("Presure.tag");
             var currentPressureValue = double.Parse(currentPressureData);

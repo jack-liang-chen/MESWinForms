@@ -82,6 +82,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblTemperature = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -425,6 +426,7 @@
             this.tlpLeftTopRightSide.ColumnCount = 2;
             this.tlpLeftTopRightSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpLeftTopRightSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLeftTopRightSide.Controls.Add(this.lblTemperature, 1, 4);
             this.tlpLeftTopRightSide.Controls.Add(this.label1, 0, 0);
             this.tlpLeftTopRightSide.Controls.Add(this.lblUserValue, 1, 0);
             this.tlpLeftTopRightSide.Controls.Add(this.label2, 0, 1);
@@ -437,17 +439,17 @@
             this.tlpLeftTopRightSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeftTopRightSide.Location = new System.Drawing.Point(3, 3);
             this.tlpLeftTopRightSide.Name = "tlpLeftTopRightSide";
-            this.tlpLeftTopRightSide.RowCount = 10;
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpLeftTopRightSide.RowCount = 5;
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpLeftTopRightSide.Size = new System.Drawing.Size(214, 312);
             this.tlpLeftTopRightSide.TabIndex = 1;
             // 
@@ -460,7 +462,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 31);
+            this.label1.Size = new System.Drawing.Size(101, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "角色:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -474,7 +476,7 @@
             this.lblUserValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblUserValue.Location = new System.Drawing.Point(110, 0);
             this.lblUserValue.Name = "lblUserValue";
-            this.lblUserValue.Size = new System.Drawing.Size(101, 31);
+            this.lblUserValue.Size = new System.Drawing.Size(101, 62);
             this.lblUserValue.TabIndex = 1;
             this.lblUserValue.Text = "Admin";
             this.lblUserValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -486,9 +488,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(3, 31);
+            this.label2.Location = new System.Drawing.Point(3, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 31);
+            this.label2.Size = new System.Drawing.Size(101, 62);
             this.label2.TabIndex = 2;
             this.label2.Text = "工作区：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -500,9 +502,9 @@
             this.lblWorkspaceValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWorkspaceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblWorkspaceValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblWorkspaceValue.Location = new System.Drawing.Point(110, 31);
+            this.lblWorkspaceValue.Location = new System.Drawing.Point(110, 62);
             this.lblWorkspaceValue.Name = "lblWorkspaceValue";
-            this.lblWorkspaceValue.Size = new System.Drawing.Size(101, 31);
+            this.lblWorkspaceValue.Size = new System.Drawing.Size(101, 62);
             this.lblWorkspaceValue.TabIndex = 3;
             this.lblWorkspaceValue.Text = "Default";
             this.lblWorkspaceValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -514,9 +516,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(3, 62);
+            this.label3.Location = new System.Drawing.Point(3, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 31);
+            this.label3.Size = new System.Drawing.Size(101, 62);
             this.label3.TabIndex = 4;
             this.label3.Text = "管理系统：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -528,9 +530,9 @@
             this.lblMgrSysValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMgrSysValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblMgrSysValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblMgrSysValue.Location = new System.Drawing.Point(110, 62);
+            this.lblMgrSysValue.Location = new System.Drawing.Point(110, 124);
             this.lblMgrSysValue.Name = "lblMgrSysValue";
-            this.lblMgrSysValue.Size = new System.Drawing.Size(101, 31);
+            this.lblMgrSysValue.Size = new System.Drawing.Size(101, 62);
             this.lblMgrSysValue.TabIndex = 5;
             this.lblMgrSysValue.Text = "4";
             this.lblMgrSysValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -542,9 +544,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(3, 93);
+            this.label4.Location = new System.Drawing.Point(3, 186);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 31);
+            this.label4.Size = new System.Drawing.Size(101, 62);
             this.label4.TabIndex = 6;
             this.label4.Text = "连接设备:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -556,9 +558,9 @@
             this.lblConnectionDev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblConnectionDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblConnectionDev.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblConnectionDev.Location = new System.Drawing.Point(110, 93);
+            this.lblConnectionDev.Location = new System.Drawing.Point(110, 186);
             this.lblConnectionDev.Name = "lblConnectionDev";
-            this.lblConnectionDev.Size = new System.Drawing.Size(101, 31);
+            this.lblConnectionDev.Size = new System.Drawing.Size(101, 62);
             this.lblConnectionDev.TabIndex = 7;
             this.lblConnectionDev.Text = "45";
             this.lblConnectionDev.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -789,13 +791,29 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(3, 124);
+            this.label6.Location = new System.Drawing.Point(3, 248);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 41);
+            this.label6.Size = new System.Drawing.Size(101, 64);
             this.label6.TabIndex = 8;
-            this.label6.Text = "温度";
+            this.label6.Text = "温度:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblTemperature
+            // 
+            this.lblTemperature.AutoSize = true;
+            this.lblTemperature.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTemperature.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblTemperature.Location = new System.Drawing.Point(110, 248);
+            this.lblTemperature.Name = "lblTemperature";
+            this.lblTemperature.Size = new System.Drawing.Size(101, 64);
+            this.lblTemperature.TabIndex = 10;
+            this.lblTemperature.Text = "23";
+            this.lblTemperature.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // MainForm
             // 
@@ -894,6 +912,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTemperature;
     }
 }
 
