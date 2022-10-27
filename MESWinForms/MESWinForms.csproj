@@ -139,6 +139,7 @@
     <Compile Include="Services\CameraService.cs" />
     <Compile Include="Services\DAQService.cs" />
     <Compile Include="Services\DataService.cs" />
+    <Compile Include="Services\DeviceService.cs" />
     <Compile Include="Services\FailedTestService.cs" />
     <Compile Include="Services\FPYService.cs" />
     <Compile Include="Services\Logger.cs" />

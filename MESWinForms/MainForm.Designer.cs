@@ -37,6 +37,8 @@
             this.tplCenterTopRight = new System.Windows.Forms.TableLayoutPanel();
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.tplCenterTopLeft = new System.Windows.Forms.TableLayoutPanel();
+            this.fpCenterLeftTop = new ScottPlot.FormsPlot();
+            this.fpCenterLeftBottom = new ScottPlot.FormsPlot();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftBottom = new System.Windows.Forms.TableLayoutPanel();
             this.fpFailedCaseTop = new ScottPlot.FormsPlot();
@@ -74,6 +76,12 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
+            this.lvCenterDevices = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -81,6 +89,7 @@
             this.tplCenterTop.SuspendLayout();
             this.tplCenterTopRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
+            this.tplCenterTopLeft.SuspendLayout();
             this.tlpLeft.SuspendLayout();
             this.tlpLeftBottom.SuspendLayout();
             this.tlpLeftTop.SuspendLayout();
@@ -174,8 +183,8 @@
             // tplCenterTop
             // 
             this.tplCenterTop.ColumnCount = 2;
-            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tplCenterTop.Controls.Add(this.tplCenterTopRight, 1, 0);
             this.tplCenterTop.Controls.Add(this.tplCenterTopLeft, 0, 0);
             this.tplCenterTop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -183,7 +192,6 @@
             this.tplCenterTop.Name = "tplCenterTop";
             this.tplCenterTop.RowCount = 1;
             this.tplCenterTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplCenterTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 551F));
             this.tplCenterTop.Size = new System.Drawing.Size(913, 551);
             this.tplCenterTop.TabIndex = 8;
             // 
@@ -191,14 +199,15 @@
             // 
             this.tplCenterTopRight.ColumnCount = 1;
             this.tplCenterTopRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tplCenterTopRight.Controls.Add(this.lvCenterDevices, 0, 1);
             this.tplCenterTopRight.Controls.Add(this.pbCamera, 0, 0);
             this.tplCenterTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tplCenterTopRight.Location = new System.Drawing.Point(459, 3);
+            this.tplCenterTopRight.Location = new System.Drawing.Point(276, 3);
             this.tplCenterTopRight.Name = "tplCenterTopRight";
             this.tplCenterTopRight.RowCount = 2;
             this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tplCenterTopRight.Size = new System.Drawing.Size(451, 545);
+            this.tplCenterTopRight.Size = new System.Drawing.Size(634, 545);
             this.tplCenterTopRight.TabIndex = 0;
             // 
             // pbCamera
@@ -206,7 +215,7 @@
             this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCamera.Location = new System.Drawing.Point(3, 3);
             this.pbCamera.Name = "pbCamera";
-            this.pbCamera.Size = new System.Drawing.Size(445, 348);
+            this.pbCamera.Size = new System.Drawing.Size(628, 348);
             this.pbCamera.TabIndex = 1;
             this.pbCamera.TabStop = false;
             // 
@@ -215,14 +224,34 @@
             this.tplCenterTopLeft.ColumnCount = 1;
             this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tplCenterTopLeft.Controls.Add(this.fpCenterLeftTop, 0, 0);
+            this.tplCenterTopLeft.Controls.Add(this.fpCenterLeftBottom, 0, 1);
             this.tplCenterTopLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tplCenterTopLeft.Location = new System.Drawing.Point(3, 3);
             this.tplCenterTopLeft.Name = "tplCenterTopLeft";
             this.tplCenterTopLeft.RowCount = 2;
             this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTopLeft.Size = new System.Drawing.Size(450, 545);
+            this.tplCenterTopLeft.Size = new System.Drawing.Size(267, 545);
             this.tplCenterTopLeft.TabIndex = 1;
+            // 
+            // fpCenterLeftTop
+            // 
+            this.fpCenterLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpCenterLeftTop.Location = new System.Drawing.Point(7, 5);
+            this.fpCenterLeftTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpCenterLeftTop.Name = "fpCenterLeftTop";
+            this.fpCenterLeftTop.Size = new System.Drawing.Size(253, 262);
+            this.fpCenterLeftTop.TabIndex = 0;
+            // 
+            // fpCenterLeftBottom
+            // 
+            this.fpCenterLeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpCenterLeftBottom.Location = new System.Drawing.Point(7, 277);
+            this.fpCenterLeftBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpCenterLeftBottom.Name = "fpCenterLeftBottom";
+            this.fpCenterLeftBottom.Size = new System.Drawing.Size(253, 263);
+            this.fpCenterLeftBottom.TabIndex = 1;
             // 
             // tlpLeft
             // 
@@ -658,7 +687,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "报警类型";
+            this.columnHeader3.Text = "报警";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // columnHeader4
@@ -685,7 +714,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Info;
             this.label5.Location = new System.Drawing.Point(616, 0);
             this.label5.Name = "label5";
@@ -699,13 +728,61 @@
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTime.ForeColor = System.Drawing.SystemColors.Info;
             this.lblDateTime.Location = new System.Drawing.Point(3, 0);
             this.lblDateTime.Name = "lblDateTime";
             this.lblDateTime.Size = new System.Drawing.Size(607, 114);
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lvCenterDevices
+            // 
+            this.lvCenterDevices.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lvCenterDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader9,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.lvCenterDevices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCenterDevices.ForeColor = System.Drawing.SystemColors.Info;
+            this.lvCenterDevices.HideSelection = false;
+            this.lvCenterDevices.Location = new System.Drawing.Point(3, 357);
+            this.lvCenterDevices.Name = "lvCenterDevices";
+            this.lvCenterDevices.Size = new System.Drawing.Size(628, 185);
+            this.lvCenterDevices.TabIndex = 2;
+            this.lvCenterDevices.UseCompatibleStateImageBehavior = false;
+            this.lvCenterDevices.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "名称";
+            this.columnHeader6.Width = 80;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "型号";
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 120;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "序列号";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 106;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "厂商";
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader11.Width = 96;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "模型";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 132;
             // 
             // MainForm
             // 
@@ -727,6 +804,7 @@
             this.tplCenterTop.ResumeLayout(false);
             this.tplCenterTopRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
+            this.tplCenterTopLeft.ResumeLayout(false);
             this.tlpLeft.ResumeLayout(false);
             this.tlpLeftBottom.ResumeLayout(false);
             this.tlpLeftTop.ResumeLayout(false);
@@ -795,6 +873,14 @@
         private System.Windows.Forms.TableLayoutPanel tplCenterTopRight;
         private System.Windows.Forms.PictureBox pbCamera;
         private System.Windows.Forms.TableLayoutPanel tplCenterTopLeft;
+        private ScottPlot.FormsPlot fpCenterLeftTop;
+        private ScottPlot.FormsPlot fpCenterLeftBottom;
+        private System.Windows.Forms.ListView lvCenterDevices;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
     }
 }
 

@@ -9,6 +9,7 @@ using ScottPlot;
 using System.Collections.Generic;
 using AForge.Video;
 using ScottPlot.Statistics;
+using MESWinForms.MediaTypes.In;
 
 namespace MESWinForms
 {
@@ -28,6 +29,8 @@ namespace MESWinForms
         private readonly FPYService _fpyService;
         private readonly AlarmService _alarmService;
         private readonly Logger _logger;
+
+        private AssetsInMediaType _assets;
 
         public MainForm(
             SystemInfoService systemInfoService,
@@ -96,6 +99,35 @@ namespace MESWinForms
             fpFPY.Plot.XAxis.Label("月");
             fpFPY.Plot.Style(Style.Black);
 
+
+            // Center Charts
+            double[] values = { 779, 586 };
+            string centerText = $"{values[0] / values.Sum() * 100:00.0}%";
+            Color color1 = Color.FromArgb(255, 0, 150, 200);
+            Color color2 = Color.FromArgb(100, 0, 150, 200);
+            var pie = fpCenterLeftTop.Plot.AddPie(values);
+            pie.DonutSize = .6;
+            pie.DonutLabel = centerText;
+            pie.CenterFont.Color = color1;
+            pie.OutlineSize = 2;
+            pie.SliceFillColors = new Color[] { color1, color2 };
+            fpCenterLeftTop.Plot.Style(Style.Black);
+            fpCenterLeftTop.Refresh();
+
+
+            double[] values2 = { 779, 586 };
+            string centerText2 = $"{values2[0] / values2.Sum() * 100:00.0}%";
+            Color color21 = Color.FromArgb(255, 0, 150, 200);
+            Color color22 = Color.FromArgb(100, 0, 150, 200);
+            var pie2 = fpCenterLeftBottom.Plot.AddPie(values2);
+            pie2.DonutSize = .6;
+            pie2.DonutLabel = centerText2;
+            pie2.CenterFont.Color = color21;
+            pie2.OutlineSize = 2;
+            pie2.SliceFillColors = new Color[] { color21, color22 };
+            fpCenterLeftBottom.Plot.Style(Style.Black);
+            fpCenterLeftBottom.Refresh();
+
             _systemInfoService = systemInfoService;
             _failedTestService = failedTestService;
             _cameraService = cameraService;
@@ -108,8 +140,12 @@ namespace MESWinForms
 
         private async void MainForm_Load(object sender, EventArgs eventArgs)
         {
+            _assets = await _systemInfoService.GetAssetsAsync();
             _videoCaptureDevice = _cameraService.StartCamera(DisplayCamera);
-            await RefreshUIAsync();
+            await GetSysInfoAsync();
+            GetCalibrationChart();
+            await GetFPYChartAsync();
+            GetDevicesInfo();
 
             var timer = new Timer
             {
@@ -117,7 +153,12 @@ namespace MESWinForms
             };
             timer.Tick += async (s, e) => 
             {
-                await RefreshUIAsync();
+                var now = DateTime.Now;
+                lblDateTime.Text = now.Year + "年" + now.Month + "月" + now.Day + "日" +
+                    DateTime.Now.ToString("hh:mm:ss");
+
+                await RefreshDAQChartAsync();
+                await RefreshAlarmTableAsync();
             };
             timer.Start();  
         }
@@ -134,26 +175,17 @@ namespace MESWinForms
             }
         }
 
-        private async Task RefreshUIAsync()
+        private void GetDevicesInfo()
         {
-            // DateTime
-            var now = DateTime.Now;
-            lblDateTime.Text = now.Year + "年" + now.Month + "月" + now.Day + "日" +
-                DateTime.Now.ToString("hh:mm:ss");
-
-            // Left
-            await RefreshSysInfoAsync();
-
-            // Center
-            await RefreshDAQChartAsync();
-
-            // Right
-            await RefreshCalibrationChartAsync();
-            await RefreshFPYChartAsync();
-            await RefreshAlarmTableAsync();
+            foreach (var vm in _assets.assets)
+            {
+                lvCenterDevices.Items.Add(
+                    new ListViewItem(
+                        new string[] { vm.name, vm.assetType, vm.serialNumber, vm.vendorName, vm.modelName }));
+            }
         }
 
-        private async Task RefreshSysInfoAsync()
+        private async Task GetSysInfoAsync()
         {
             lblMgrSysValue.Text = (await _systemInfoService.GetSystemsCountAsync()).ToString();
             lblConnectionDev.Text = (await _systemInfoService.GetConnectionDeviceCountAsync()).ToString();
@@ -220,21 +252,18 @@ namespace MESWinForms
                 _lightQueue.Dequeue();
 
             fpCenterBottom.Plot.AddSignal(_lightQueue.ToArray());
-
-
             fpCenterBottom.Refresh();
         }
 
-        private async Task RefreshCalibrationChartAsync()
+        private void GetCalibrationChart()
         {
             fpCalib.Plot.Clear();
 
-            var data = await _systemInfoService.GetAssetsAsync();
-            var deviceTotalCount = data.totalCount;
-            var disConnectedDeviceCount = data.assets.Where(x => x.location.state.systemConnection == "DISCONNECTED").Count();
+            var deviceTotalCount = _assets.totalCount;
+            var disConnectedDeviceCount = _assets.assets.Where(x => x.location.state.systemConnection == "DISCONNECTED").Count();
             var connectedDeviceCount = deviceTotalCount - disConnectedDeviceCount;
-            var supportedSeftCalibDevs = data.assets.Where(x => x.supportsSelfCalibration).Count();
-            var supportedExtCalibDevs = data.assets.Where(x => x.supportsExternalCalibration).Count();
+            var supportedSeftCalibDevs = _assets.assets.Where(x => x.supportsSelfCalibration).Count();
+            var supportedExtCalibDevs = _assets.assets.Where(x => x.supportsExternalCalibration).Count();
 
             var gauges = fpCalib.Plot.AddRadialGauge(
                 new double[] { 
@@ -254,7 +283,7 @@ namespace MESWinForms
             fpCalib.Refresh();
         }
 
-        private async Task RefreshFPYChartAsync()
+        private async Task GetFPYChartAsync()
         {
             var fpyVm = await _fpyService.GetAll();
             var resolved = fpyVm.FPYByMonth.Reverse();
@@ -271,7 +300,6 @@ namespace MESWinForms
         private async Task RefreshAlarmTableAsync()
         {
             var alermVMs = await _alarmService.GetAll();
-            lvRightBottom.Items.Clear();
             foreach (var vm in alermVMs)
             {
                 lvRightBottom.Items.Add(
