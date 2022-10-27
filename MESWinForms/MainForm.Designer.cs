@@ -78,7 +78,6 @@
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lvCenterDevices = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -517,7 +516,7 @@
             // 
             this.lblSysInfo.AutoSize = true;
             this.lblSysInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSysInfo.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.lblSysInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSysInfo.ForeColor = System.Drawing.SystemColors.Info;
             this.lblSysInfo.Location = new System.Drawing.Point(27, 33);
             this.lblSysInfo.Name = "lblSysInfo";
@@ -617,7 +616,7 @@
             // 
             this.lblRightTop.AutoSize = true;
             this.lblRightTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRightTop.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.lblRightTop.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRightTop.ForeColor = System.Drawing.SystemColors.Info;
             this.lblRightTop.Location = new System.Drawing.Point(20, 22);
             this.lblRightTop.Name = "lblRightTop";
@@ -741,7 +740,6 @@
             this.lvCenterDevices.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.lvCenterDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
-            this.columnHeader7,
             this.columnHeader9,
             this.columnHeader11,
             this.columnHeader12});
@@ -759,12 +757,6 @@
             // 
             this.columnHeader6.Text = "设备名称";
             this.columnHeader6.Width = 80;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "型号";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 120;
             // 
             // columnHeader9
             // 
@@ -877,7 +869,6 @@
         private ScottPlot.FormsPlot fpCenterLeftBottom;
         private System.Windows.Forms.ListView lvCenterDevices;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;

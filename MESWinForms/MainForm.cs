@@ -192,7 +192,7 @@ namespace MESWinForms
             {
                 lvCenterDevices.Items.Add(
                     new ListViewItem(
-                        new string[] { vm.name, vm.assetType, vm.serialNumber, vm.vendorName, vm.modelName }));
+                        new string[] { vm.name, vm.serialNumber, vm.vendorName, vm.modelName }));
             }
         }
 
