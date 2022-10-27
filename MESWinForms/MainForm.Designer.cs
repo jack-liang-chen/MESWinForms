@@ -669,7 +669,7 @@
             // 
             this.lblRightTop.AutoSize = true;
             this.lblRightTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRightTop.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRightTop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblRightTop.ForeColor = System.Drawing.SystemColors.Info;
             this.lblRightTop.Location = new System.Drawing.Point(20, 22);
             this.lblRightTop.Name = "lblRightTop";
