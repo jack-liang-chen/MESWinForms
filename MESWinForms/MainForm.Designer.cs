@@ -51,9 +51,9 @@
             this.tlpLeftTop = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftTopContent = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftTopLeftSide = new System.Windows.Forms.TableLayoutPanel();
-            this.fpSysInfoTop = new ScottPlot.FormsPlot();
             this.fpSysInfoBottom = new ScottPlot.FormsPlot();
             this.tlpLeftTopRightSide = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTemperature = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUserValue = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.lblMgrSysValue = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblConnectionDev = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblSysInfo = new System.Windows.Forms.Label();
             this.tlpRight = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRightCenter = new System.Windows.Forms.Panel();
@@ -81,8 +82,7 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTemperature = new System.Windows.Forms.Label();
+            this.fpSysInfoTop = new ScottPlot.FormsPlot();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -403,15 +403,6 @@
             this.tlpLeftTopLeftSide.Size = new System.Drawing.Size(326, 312);
             this.tlpLeftTopLeftSide.TabIndex = 0;
             // 
-            // fpSysInfoTop
-            // 
-            this.fpSysInfoTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpSysInfoTop.Location = new System.Drawing.Point(7, 5);
-            this.fpSysInfoTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpSysInfoTop.Name = "fpSysInfoTop";
-            this.fpSysInfoTop.Size = new System.Drawing.Size(312, 146);
-            this.fpSysInfoTop.TabIndex = 0;
-            // 
             // fpSysInfoBottom
             // 
             this.fpSysInfoBottom.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -453,117 +444,134 @@
             this.tlpLeftTopRightSide.Size = new System.Drawing.Size(214, 312);
             this.tlpLeftTopRightSide.TabIndex = 1;
             // 
+            // lblTemperature
+            // 
+            this.lblTemperature.AutoSize = true;
+            this.lblTemperature.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTemperature.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTemperature.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblTemperature.Location = new System.Drawing.Point(110, 248);
+            this.lblTemperature.Name = "lblTemperature";
+            this.lblTemperature.Size = new System.Drawing.Size(101, 64);
+            this.lblTemperature.TabIndex = 10;
+            this.lblTemperature.Text = "23";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "角色:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblUserValue
             // 
             this.lblUserValue.AutoSize = true;
             this.lblUserValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblUserValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUserValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblUserValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblUserValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblUserValue.Location = new System.Drawing.Point(110, 0);
             this.lblUserValue.Name = "lblUserValue";
             this.lblUserValue.Size = new System.Drawing.Size(101, 62);
             this.lblUserValue.TabIndex = 1;
             this.lblUserValue.Text = "Admin";
-            this.lblUserValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
             this.label2.Location = new System.Drawing.Point(3, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 62);
             this.label2.TabIndex = 2;
             this.label2.Text = "工作区：";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblWorkspaceValue
             // 
             this.lblWorkspaceValue.AutoSize = true;
             this.lblWorkspaceValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblWorkspaceValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWorkspaceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblWorkspaceValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblWorkspaceValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblWorkspaceValue.Location = new System.Drawing.Point(110, 62);
             this.lblWorkspaceValue.Name = "lblWorkspaceValue";
             this.lblWorkspaceValue.Size = new System.Drawing.Size(101, 62);
             this.lblWorkspaceValue.TabIndex = 3;
             this.lblWorkspaceValue.Text = "Default";
-            this.lblWorkspaceValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
             this.label3.Location = new System.Drawing.Point(3, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 62);
             this.label3.TabIndex = 4;
             this.label3.Text = "管理系统：";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblMgrSysValue
             // 
             this.lblMgrSysValue.AutoSize = true;
             this.lblMgrSysValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMgrSysValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMgrSysValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblMgrSysValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblMgrSysValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblMgrSysValue.Location = new System.Drawing.Point(110, 124);
             this.lblMgrSysValue.Name = "lblMgrSysValue";
             this.lblMgrSysValue.Size = new System.Drawing.Size(101, 62);
             this.lblMgrSysValue.TabIndex = 5;
             this.lblMgrSysValue.Text = "4";
-            this.lblMgrSysValue.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
             this.label4.Location = new System.Drawing.Point(3, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 62);
             this.label4.TabIndex = 6;
             this.label4.Text = "连接设备:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblConnectionDev
             // 
             this.lblConnectionDev.AutoSize = true;
             this.lblConnectionDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblConnectionDev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblConnectionDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblConnectionDev.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblConnectionDev.ForeColor = System.Drawing.SystemColors.Info;
             this.lblConnectionDev.Location = new System.Drawing.Point(110, 186);
             this.lblConnectionDev.Name = "lblConnectionDev";
             this.lblConnectionDev.Size = new System.Drawing.Size(101, 62);
             this.lblConnectionDev.TabIndex = 7;
             this.lblConnectionDev.Text = "45";
-            this.lblConnectionDev.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(3, 248);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 64);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "温度:";
             // 
             // lblSysInfo
             // 
@@ -788,32 +796,14 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // fpSysInfoTop
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(3, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 64);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "温度:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblTemperature
-            // 
-            this.lblTemperature.AutoSize = true;
-            this.lblTemperature.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblTemperature.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblTemperature.Location = new System.Drawing.Point(110, 248);
-            this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(101, 64);
-            this.lblTemperature.TabIndex = 10;
-            this.lblTemperature.Text = "23";
-            this.lblTemperature.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.fpSysInfoTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpSysInfoTop.Location = new System.Drawing.Point(7, 5);
+            this.fpSysInfoTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpSysInfoTop.Name = "fpSysInfoTop";
+            this.fpSysInfoTop.Size = new System.Drawing.Size(312, 146);
+            this.fpSysInfoTop.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -881,7 +871,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpLeftTop;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopContent;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopLeftSide;
-        private ScottPlot.FormsPlot fpSysInfoTop;
         private ScottPlot.FormsPlot fpSysInfoBottom;
         private System.Windows.Forms.Label lblSysInfo;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopRightSide;
@@ -913,6 +902,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTemperature;
+        private ScottPlot.FormsPlot fpSysInfoTop;
     }
 }
 
