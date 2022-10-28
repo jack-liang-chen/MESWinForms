@@ -119,6 +119,7 @@ namespace MESWinForms
             GetCalibrationChart();
             await GetFPYChartAsync();
             GetDevicesInfo();
+            await RefreshAlarmTableAsync();
 
             var timer = new Timer
             {
@@ -131,7 +132,6 @@ namespace MESWinForms
                     DateTime.Now.ToString("hh:mm:ss");
 
                 await RefreshDAQChartAsync();
-                await RefreshAlarmTableAsync();
             };
             timer.Start();  
         }
