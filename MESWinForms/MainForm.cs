@@ -160,7 +160,7 @@ namespace MESWinForms
             fpCenterLeftBottom.Plot.Title("设备激活率");
             fpCenterLeftBottom.Refresh();
 
-            foreach (var vm in _assets.assets)
+            foreach (var vm in _assets.assets.GetRange(0,8))
             {
                 lvCenterDevices.Items.Add(
                     new ListViewItem(

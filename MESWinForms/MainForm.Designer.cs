@@ -35,13 +35,6 @@
             this.fpCenterBottom = new ScottPlot.FormsPlot();
             this.tplCenterTop = new System.Windows.Forms.TableLayoutPanel();
             this.tplCenterTopRight = new System.Windows.Forms.TableLayoutPanel();
-            this.lvCenterDevices = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftBottom = new System.Windows.Forms.TableLayoutPanel();
@@ -84,6 +77,13 @@
             this.lblDateTime = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvCenterDevices = new System.Windows.Forms.ListView();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -210,58 +210,6 @@
             this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tplCenterTopRight.Size = new System.Drawing.Size(907, 533);
             this.tplCenterTopRight.TabIndex = 0;
-            // 
-            // lvCenterDevices
-            // 
-            this.lvCenterDevices.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.lvCenterDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader9,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.lvCenterDevices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCenterDevices.ForeColor = System.Drawing.SystemColors.Info;
-            this.lvCenterDevices.HideSelection = false;
-            this.lvCenterDevices.Location = new System.Drawing.Point(3, 349);
-            this.lvCenterDevices.Name = "lvCenterDevices";
-            this.lvCenterDevices.Size = new System.Drawing.Size(901, 181);
-            this.lvCenterDevices.TabIndex = 2;
-            this.lvCenterDevices.UseCompatibleStateImageBehavior = false;
-            this.lvCenterDevices.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "设备名称";
-            this.columnHeader6.Width = 80;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "序列号";
-            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader9.Width = 106;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "厂商";
-            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader11.Width = 96;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "模型";
-            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 132;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "总线型号";
-            this.columnHeader7.Width = 120;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "硬件版本";
             // 
             // pbCamera
             // 
@@ -799,9 +747,61 @@
             this.label8.ForeColor = System.Drawing.SystemColors.Info;
             this.label8.Location = new System.Drawing.Point(110, 255);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 60);
+            this.label8.Size = new System.Drawing.Size(83, 45);
             this.label8.TabIndex = 12;
             this.label8.Text = "12.5";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "设备名称";
+            this.columnHeader6.Width = 80;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "序列号";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 106;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "厂商";
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader11.Width = 96;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "模型";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 132;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "总线型号";
+            this.columnHeader7.Width = 120;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "硬件版本";
+            // 
+            // lvCenterDevices
+            // 
+            this.lvCenterDevices.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lvCenterDevices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader9,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lvCenterDevices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCenterDevices.ForeColor = System.Drawing.SystemColors.Info;
+            this.lvCenterDevices.HideSelection = false;
+            this.lvCenterDevices.Location = new System.Drawing.Point(3, 349);
+            this.lvCenterDevices.Name = "lvCenterDevices";
+            this.lvCenterDevices.Size = new System.Drawing.Size(901, 181);
+            this.lvCenterDevices.TabIndex = 2;
+            this.lvCenterDevices.UseCompatibleStateImageBehavior = false;
+            this.lvCenterDevices.View = System.Windows.Forms.View.Details;
             // 
             // MainForm
             // 
@@ -889,18 +889,18 @@
         private System.Windows.Forms.TableLayoutPanel tplCenterTopRight;
         private System.Windows.Forms.PictureBox pbCamera;
         private ScottPlot.FormsPlot fpCenterLeftTop;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTemperature;
+        private ScottPlot.FormsPlot fpCenterLeftBottom;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListView lvCenterDevices;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTemperature;
-        private ScottPlot.FormsPlot fpCenterLeftBottom;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
     }
 }
 
