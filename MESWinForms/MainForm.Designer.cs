@@ -40,6 +40,8 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftBottom = new System.Windows.Forms.TableLayoutPanel();
@@ -80,8 +82,8 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -252,6 +254,15 @@
             this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader12.Width = 132;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "总线型号";
+            this.columnHeader7.Width = 120;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "硬件版本";
+            // 
             // pbCamera
             // 
             this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -392,6 +403,7 @@
             this.tlpLeftTopRightSide.ColumnCount = 2;
             this.tlpLeftTopRightSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpLeftTopRightSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLeftTopRightSide.Controls.Add(this.label7, 0, 5);
             this.tlpLeftTopRightSide.Controls.Add(this.lblTemperature, 1, 4);
             this.tlpLeftTopRightSide.Controls.Add(this.label1, 0, 0);
             this.tlpLeftTopRightSide.Controls.Add(this.lblUserValue, 1, 0);
@@ -402,20 +414,17 @@
             this.tlpLeftTopRightSide.Controls.Add(this.label4, 0, 3);
             this.tlpLeftTopRightSide.Controls.Add(this.lblConnectionDev, 1, 3);
             this.tlpLeftTopRightSide.Controls.Add(this.label6, 0, 4);
+            this.tlpLeftTopRightSide.Controls.Add(this.label8, 1, 5);
             this.tlpLeftTopRightSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeftTopRightSide.Location = new System.Drawing.Point(3, 3);
             this.tlpLeftTopRightSide.Name = "tlpLeftTopRightSide";
-            this.tlpLeftTopRightSide.RowCount = 5;
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpLeftTopRightSide.RowCount = 6;
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpLeftTopRightSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpLeftTopRightSide.Size = new System.Drawing.Size(214, 306);
             this.tlpLeftTopRightSide.TabIndex = 1;
             // 
@@ -426,9 +435,9 @@
             this.lblTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTemperature.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTemperature.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblTemperature.Location = new System.Drawing.Point(110, 244);
+            this.lblTemperature.Location = new System.Drawing.Point(110, 204);
             this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(101, 62);
+            this.lblTemperature.Size = new System.Drawing.Size(101, 51);
             this.lblTemperature.TabIndex = 10;
             this.lblTemperature.Text = "23";
             // 
@@ -441,7 +450,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 61);
+            this.label1.Size = new System.Drawing.Size(101, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = "角色:";
             // 
@@ -454,7 +463,7 @@
             this.lblUserValue.ForeColor = System.Drawing.SystemColors.Info;
             this.lblUserValue.Location = new System.Drawing.Point(110, 0);
             this.lblUserValue.Name = "lblUserValue";
-            this.lblUserValue.Size = new System.Drawing.Size(101, 61);
+            this.lblUserValue.Size = new System.Drawing.Size(101, 51);
             this.lblUserValue.TabIndex = 1;
             this.lblUserValue.Text = "Admin";
             // 
@@ -465,9 +474,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(3, 61);
+            this.label2.Location = new System.Drawing.Point(3, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 61);
+            this.label2.Size = new System.Drawing.Size(101, 51);
             this.label2.TabIndex = 2;
             this.label2.Text = "工作区：";
             // 
@@ -478,9 +487,9 @@
             this.lblWorkspaceValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWorkspaceValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblWorkspaceValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblWorkspaceValue.Location = new System.Drawing.Point(110, 61);
+            this.lblWorkspaceValue.Location = new System.Drawing.Point(110, 51);
             this.lblWorkspaceValue.Name = "lblWorkspaceValue";
-            this.lblWorkspaceValue.Size = new System.Drawing.Size(101, 61);
+            this.lblWorkspaceValue.Size = new System.Drawing.Size(101, 51);
             this.lblWorkspaceValue.TabIndex = 3;
             this.lblWorkspaceValue.Text = "Default";
             // 
@@ -491,9 +500,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(3, 122);
+            this.label3.Location = new System.Drawing.Point(3, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 61);
+            this.label3.Size = new System.Drawing.Size(101, 51);
             this.label3.TabIndex = 4;
             this.label3.Text = "管理系统：";
             // 
@@ -504,9 +513,9 @@
             this.lblMgrSysValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMgrSysValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblMgrSysValue.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblMgrSysValue.Location = new System.Drawing.Point(110, 122);
+            this.lblMgrSysValue.Location = new System.Drawing.Point(110, 102);
             this.lblMgrSysValue.Name = "lblMgrSysValue";
-            this.lblMgrSysValue.Size = new System.Drawing.Size(101, 61);
+            this.lblMgrSysValue.Size = new System.Drawing.Size(101, 51);
             this.lblMgrSysValue.TabIndex = 5;
             this.lblMgrSysValue.Text = "4";
             // 
@@ -517,9 +526,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(3, 183);
+            this.label4.Location = new System.Drawing.Point(3, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 61);
+            this.label4.Size = new System.Drawing.Size(101, 51);
             this.label4.TabIndex = 6;
             this.label4.Text = "连接设备:";
             // 
@@ -530,9 +539,9 @@
             this.lblConnectionDev.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblConnectionDev.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblConnectionDev.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblConnectionDev.Location = new System.Drawing.Point(110, 183);
+            this.lblConnectionDev.Location = new System.Drawing.Point(110, 153);
             this.lblConnectionDev.Name = "lblConnectionDev";
-            this.lblConnectionDev.Size = new System.Drawing.Size(101, 61);
+            this.lblConnectionDev.Size = new System.Drawing.Size(101, 51);
             this.lblConnectionDev.TabIndex = 7;
             this.lblConnectionDev.Text = "45";
             // 
@@ -542,9 +551,9 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(3, 244);
+            this.label6.Location = new System.Drawing.Point(3, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 62);
+            this.label6.Size = new System.Drawing.Size(101, 51);
             this.label6.TabIndex = 8;
             this.label6.Text = "温度:";
             // 
@@ -755,7 +764,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(919, 111);
             this.label5.TabIndex = 4;
-            this.label5.Text = "NI数字化展示系统";
+            this.label5.Text = "NI数字化转型智能展示系统";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDateTime
@@ -771,14 +780,28 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // columnHeader7
+            // label7
             // 
-            this.columnHeader7.Text = "总线型号";
-            this.columnHeader7.Width = 120;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.Info;
+            this.label7.Location = new System.Drawing.Point(3, 255);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 51);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "湿度:";
             // 
-            // columnHeader8
+            // label8
             // 
-            this.columnHeader8.Text = "硬件版本";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.Info;
+            this.label8.Location = new System.Drawing.Point(110, 255);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 60);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "12.5";
             // 
             // MainForm
             // 
@@ -876,6 +899,8 @@
         private ScottPlot.FormsPlot fpCenterLeftBottom;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
