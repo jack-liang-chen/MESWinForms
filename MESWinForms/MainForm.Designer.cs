@@ -41,8 +41,6 @@
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbCamera = new System.Windows.Forms.PictureBox();
-            this.tplCenterTopLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.fpCenterLeftTop = new ScottPlot.FormsPlot();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftBottom = new System.Windows.Forms.TableLayoutPanel();
             this.fpFailedCaseTop = new ScottPlot.FormsPlot();
@@ -50,7 +48,8 @@
             this.tlpLeftTop = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftTopContent = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftTopLeftSide = new System.Windows.Forms.TableLayoutPanel();
-            this.fpSysInfoBottom = new ScottPlot.FormsPlot();
+            this.fpCenterLeftBottom = new ScottPlot.FormsPlot();
+            this.fpCenterLeftTop = new ScottPlot.FormsPlot();
             this.tlpLeftTopRightSide = new System.Windows.Forms.TableLayoutPanel();
             this.lblTemperature = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,8 +80,8 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.fpSysInfoTop = new ScottPlot.FormsPlot();
-            this.fpCenterLeftBottom = new ScottPlot.FormsPlot();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -90,7 +89,6 @@
             this.tplCenterTop.SuspendLayout();
             this.tplCenterTopRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
-            this.tplCenterTopLeft.SuspendLayout();
             this.tlpLeft.SuspendLayout();
             this.tlpLeftBottom.SuspendLayout();
             this.tlpLeftTop.SuspendLayout();
@@ -184,11 +182,10 @@
             // 
             // tplCenterTop
             // 
-            this.tplCenterTop.ColumnCount = 2;
-            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tplCenterTop.Controls.Add(this.tplCenterTopRight, 1, 0);
-            this.tplCenterTop.Controls.Add(this.tplCenterTopLeft, 0, 0);
+            this.tplCenterTop.ColumnCount = 1;
+            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tplCenterTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tplCenterTop.Controls.Add(this.tplCenterTopRight, 0, 0);
             this.tplCenterTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tplCenterTop.Location = new System.Drawing.Point(3, 3);
             this.tplCenterTop.Name = "tplCenterTop";
@@ -204,12 +201,12 @@
             this.tplCenterTopRight.Controls.Add(this.lvCenterDevices, 0, 1);
             this.tplCenterTopRight.Controls.Add(this.pbCamera, 0, 0);
             this.tplCenterTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tplCenterTopRight.Location = new System.Drawing.Point(276, 3);
+            this.tplCenterTopRight.Location = new System.Drawing.Point(3, 3);
             this.tplCenterTopRight.Name = "tplCenterTopRight";
             this.tplCenterTopRight.RowCount = 2;
             this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tplCenterTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tplCenterTopRight.Size = new System.Drawing.Size(634, 533);
+            this.tplCenterTopRight.Size = new System.Drawing.Size(907, 533);
             this.tplCenterTopRight.TabIndex = 0;
             // 
             // lvCenterDevices
@@ -219,13 +216,15 @@
             this.columnHeader6,
             this.columnHeader9,
             this.columnHeader11,
-            this.columnHeader12});
+            this.columnHeader12,
+            this.columnHeader7,
+            this.columnHeader8});
             this.lvCenterDevices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvCenterDevices.ForeColor = System.Drawing.SystemColors.Info;
             this.lvCenterDevices.HideSelection = false;
             this.lvCenterDevices.Location = new System.Drawing.Point(3, 349);
             this.lvCenterDevices.Name = "lvCenterDevices";
-            this.lvCenterDevices.Size = new System.Drawing.Size(628, 181);
+            this.lvCenterDevices.Size = new System.Drawing.Size(901, 181);
             this.lvCenterDevices.TabIndex = 2;
             this.lvCenterDevices.UseCompatibleStateImageBehavior = false;
             this.lvCenterDevices.View = System.Windows.Forms.View.Details;
@@ -258,34 +257,9 @@
             this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCamera.Location = new System.Drawing.Point(3, 3);
             this.pbCamera.Name = "pbCamera";
-            this.pbCamera.Size = new System.Drawing.Size(628, 340);
+            this.pbCamera.Size = new System.Drawing.Size(901, 340);
             this.pbCamera.TabIndex = 1;
             this.pbCamera.TabStop = false;
-            // 
-            // tplCenterTopLeft
-            // 
-            this.tplCenterTopLeft.ColumnCount = 1;
-            this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tplCenterTopLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tplCenterTopLeft.Controls.Add(this.fpSysInfoBottom, 0, 0);
-            this.tplCenterTopLeft.Controls.Add(this.fpSysInfoTop, 0, 1);
-            this.tplCenterTopLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tplCenterTopLeft.Location = new System.Drawing.Point(3, 3);
-            this.tplCenterTopLeft.Name = "tplCenterTopLeft";
-            this.tplCenterTopLeft.RowCount = 2;
-            this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTopLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tplCenterTopLeft.Size = new System.Drawing.Size(267, 533);
-            this.tplCenterTopLeft.TabIndex = 1;
-            // 
-            // fpCenterLeftTop
-            // 
-            this.fpCenterLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCenterLeftTop.Location = new System.Drawing.Point(62, 25);
-            this.fpCenterLeftTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpCenterLeftTop.Name = "fpCenterLeftTop";
-            this.fpCenterLeftTop.Size = new System.Drawing.Size(175, 135);
-            this.fpCenterLeftTop.TabIndex = 0;
             // 
             // tlpLeft
             // 
@@ -395,14 +369,23 @@
             this.tlpLeftTopLeftSide.Size = new System.Drawing.Size(326, 306);
             this.tlpLeftTopLeftSide.TabIndex = 0;
             // 
-            // fpSysInfoBottom
+            // fpCenterLeftBottom
             // 
-            this.fpSysInfoBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpSysInfoBottom.Location = new System.Drawing.Point(9, 7);
-            this.fpSysInfoBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpSysInfoBottom.Name = "fpSysInfoBottom";
-            this.fpSysInfoBottom.Size = new System.Drawing.Size(337, 341);
-            this.fpSysInfoBottom.TabIndex = 1;
+            this.fpCenterLeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpCenterLeftBottom.Location = new System.Drawing.Point(7, 158);
+            this.fpCenterLeftBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpCenterLeftBottom.Name = "fpCenterLeftBottom";
+            this.fpCenterLeftBottom.Size = new System.Drawing.Size(312, 143);
+            this.fpCenterLeftBottom.TabIndex = 6;
+            // 
+            // fpCenterLeftTop
+            // 
+            this.fpCenterLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpCenterLeftTop.Location = new System.Drawing.Point(7, 5);
+            this.fpCenterLeftTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpCenterLeftTop.Name = "fpCenterLeftTop";
+            this.fpCenterLeftTop.Size = new System.Drawing.Size(312, 143);
+            this.fpCenterLeftTop.TabIndex = 0;
             // 
             // tlpLeftTopRightSide
             // 
@@ -788,23 +771,14 @@
             this.lblDateTime.TabIndex = 5;
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // fpSysInfoTop
+            // columnHeader7
             // 
-            this.fpSysInfoTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpSysInfoTop.Location = new System.Drawing.Point(9, 361);
-            this.fpSysInfoTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpSysInfoTop.Name = "fpSysInfoTop";
-            this.fpSysInfoTop.Size = new System.Drawing.Size(337, 343);
-            this.fpSysInfoTop.TabIndex = 0;
+            this.columnHeader7.Text = "总线型号";
+            this.columnHeader7.Width = 120;
             // 
-            // fpCenterLeftBottom
+            // columnHeader8
             // 
-            this.fpCenterLeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCenterLeftBottom.Location = new System.Drawing.Point(90, 244);
-            this.fpCenterLeftBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpCenterLeftBottom.Name = "fpCenterLeftBottom";
-            this.fpCenterLeftBottom.Size = new System.Drawing.Size(141, 47);
-            this.fpCenterLeftBottom.TabIndex = 6;
+            this.columnHeader8.Text = "硬件版本";
             // 
             // MainForm
             // 
@@ -826,7 +800,6 @@
             this.tplCenterTop.ResumeLayout(false);
             this.tplCenterTopRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
-            this.tplCenterTopLeft.ResumeLayout(false);
             this.tlpLeft.ResumeLayout(false);
             this.tlpLeftBottom.ResumeLayout(false);
             this.tlpLeftTop.ResumeLayout(false);
@@ -872,7 +845,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpLeftTop;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopContent;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopLeftSide;
-        private ScottPlot.FormsPlot fpSysInfoBottom;
         private System.Windows.Forms.Label lblSysInfo;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopRightSide;
         private System.Windows.Forms.Label label1;
@@ -893,7 +865,6 @@
         private System.Windows.Forms.TableLayoutPanel tplCenterTop;
         private System.Windows.Forms.TableLayoutPanel tplCenterTopRight;
         private System.Windows.Forms.PictureBox pbCamera;
-        private System.Windows.Forms.TableLayoutPanel tplCenterTopLeft;
         private ScottPlot.FormsPlot fpCenterLeftTop;
         private System.Windows.Forms.ListView lvCenterDevices;
         private System.Windows.Forms.ColumnHeader columnHeader6;
@@ -902,8 +873,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTemperature;
-        private ScottPlot.FormsPlot fpSysInfoTop;
         private ScottPlot.FormsPlot fpCenterLeftBottom;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
 

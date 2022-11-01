@@ -49,34 +49,6 @@ namespace MESWinForms
             tlpLeftTop.BackColor = Color.Transparent;
             fpCenterBottom.BackColor = Color.Transparent;
 
-            fpSysInfoTop.Plot.Style(Style.Black);
-            fpSysInfoTop.Plot.Legend(true);
-
-            fpSysInfoBottom.Plot.Style(Style.Black);
-            fpSysInfoBottom.Plot.Legend(true);
-
-            // Top Chart
-            fpSysInfoTop.Plot.Clear();
-            var topGauges = fpSysInfoTop.Plot.AddRadialGauge(new double[] {
-                4,3
-            });
-            topGauges.Labels = new string[] { "系统总数", "运行系统" };
-            topGauges.Colors = new Color[] { Color.FromArgb(105, 48, 169),
-                Color.FromArgb(79, 84, 178)};
-
-            fpSysInfoTop.Refresh();
-
-            // Bottom Chart
-            fpSysInfoBottom.Plot.Clear();
-            var bottomGauges = fpSysInfoBottom.Plot.AddRadialGauge(new double[] {
-                260,135
-            });
-            bottomGauges.Labels = new string[] { "测试计划", "已完成" };
-            bottomGauges.Colors = new Color[] { Color.FromArgb(105, 48, 169),
-                Color.FromArgb(79, 84, 178)};
-            fpSysInfoBottom.Refresh();
-
-
             fpFailedCaseTop.Plot.Title("Failed测试分析");
             fpFailedCaseTop.Plot.YAxis.Label("计数 (#)");
             fpFailedCaseTop.Plot.SetAxisLimits(yMin: 0);
@@ -192,7 +164,7 @@ namespace MESWinForms
             {
                 lvCenterDevices.Items.Add(
                     new ListViewItem(
-                        new string[] { vm.name, vm.serialNumber, vm.vendorName, vm.modelName }));
+                        new string[] { vm.name, vm.serialNumber, vm.vendorName, vm.modelName, vm.busType, vm.hardwareVersion }));
             }
         }
 
