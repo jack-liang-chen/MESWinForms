@@ -279,7 +279,7 @@ namespace MESWinForms
         private async Task RefreshAlarmTableAsync()
         {
             var alermVMs = await _alarmService.GetAll();
-            foreach (var vm in alermVMs)
+            foreach (var vm in alermVMs.GetRange(0,10))
             {
                 lvRightBottom.Items.Add(
                     new ListViewItem(
