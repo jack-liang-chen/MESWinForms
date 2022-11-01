@@ -279,11 +279,26 @@ namespace MESWinForms
         private async Task RefreshAlarmTableAsync()
         {
             var alermVMs = await _alarmService.GetAll();
-            foreach (var vm in alermVMs.GetRange(0,10))
+            foreach (var vm in alermVMs.GetRange(0,8))
             {
+                var currentTransType = GetTransType(vm.CurrentTransitionType);
+
                 lvRightBottom.Items.Add(
                     new ListViewItem(
-                        new string[] { vm.Id.ToString(), vm.System, vm.ResourceType, vm.CurrentTransitionType, vm.LastValue }));
+                        new string[] { vm.Id.ToString(), vm.System, vm.ResourceType, currentTransType, vm.LastValue }));
+            }
+        }
+
+        private string GetTransType(string currentTransitionType)
+        {
+            switch (currentTransitionType)
+            {
+                case "SET":
+                    return "High";
+                case "CLEAR":
+                    return "Middle";
+                default:
+                    return "Low";
             }
         }
 
