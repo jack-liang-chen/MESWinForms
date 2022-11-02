@@ -143,7 +143,13 @@ namespace MESWinForms
 
             fpSysInfo.Refresh();
 
-            foreach (var vm in _assets.assets.GetRange(0,8))
+            var assetList = _assets.assets;
+            if (assetList.Count >= 8)
+            {
+                assetList = assetList.GetRange(0, 8);
+            }            
+
+            foreach (var vm in assetList)
             {
                 lvCenterDevices.Items.Add(
                     new ListViewItem(
@@ -262,7 +268,11 @@ namespace MESWinForms
         private async Task RefreshAlarmTableAsync()
         {
             var alermVMs = await _alarmService.GetAll();
-            foreach (var vm in alermVMs.GetRange(0,8))
+
+            if (alermVMs.Count > 8)
+                alermVMs = alermVMs.GetRange(0, 8);
+
+            foreach (var vm in alermVMs)
             {
                 var currentTransType = GetTransType(vm.CurrentTransitionType);
 
