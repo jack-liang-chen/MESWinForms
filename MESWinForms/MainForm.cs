@@ -129,8 +129,15 @@ namespace MESWinForms
 
         private void GetDevicesInfo()
         {
+            var total = _assetSummary.total;
             var inUse = _assetSummary.inUse;
             var active = _assetSummary.active;
+
+            double[] values = { total, inUse, active};
+            var gauges = fpSysInfo.Plot.AddRadialGauge(values);
+            gauges.Labels = new string[] { "设备总数", "已使用", "已激活" };
+
+            fpSysInfo.Refresh();
 
             foreach (var vm in _assets.assets.GetRange(0,8))
             {
@@ -224,12 +231,12 @@ namespace MESWinForms
                     supportedSeftCalibDevs, 
                     supportedExtCalibDevs });
             gauges.Labels = new string[] { "设备总数", "已连接", "非连接", "自校准", "外部校准"};
-            gauges.Colors = new Color[] { 
-                Color.FromArgb(105, 48, 169), 
-                Color.FromArgb(79, 84, 178), 
-                Color.FromArgb(63, 116, 217), 
-                Color.FromArgb(92, 173, 210), 
-                Color.FromArgb(89, 228, 224) };
+            //gauges.Colors = new Color[] { 
+            //    Color.FromArgb(105, 48, 169), 
+            //    Color.FromArgb(79, 84, 178), 
+            //    Color.FromArgb(63, 116, 217), 
+            //    Color.FromArgb(92, 173, 210), 
+            //    Color.FromArgb(89, 228, 224) };
 
             fpCalib.Refresh();
         }
