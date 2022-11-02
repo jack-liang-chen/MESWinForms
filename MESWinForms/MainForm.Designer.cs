@@ -38,9 +38,6 @@
             this.fpFailedCaseBottom = new ScottPlot.FormsPlot();
             this.tlpLeftTop = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeftTopContent = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpLeftTopLeftSide = new System.Windows.Forms.TableLayoutPanel();
-            this.fpCenterLeftBottom = new ScottPlot.FormsPlot();
-            this.fpCenterLeftTop = new ScottPlot.FormsPlot();
             this.tlpLeftTopRightSide = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.lblTemperature = new System.Windows.Forms.Label();
@@ -85,6 +82,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.fpCenterBottom = new ScottPlot.FormsPlot();
+            this.fpSysInfo = new ScottPlot.FormsPlot();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -93,7 +91,6 @@
             this.tlpLeftBottom.SuspendLayout();
             this.tlpLeftTop.SuspendLayout();
             this.tlpLeftTopContent.SuspendLayout();
-            this.tlpLeftTopLeftSide.SuspendLayout();
             this.tlpLeftTopRightSide.SuspendLayout();
             this.tlpRight.SuspendLayout();
             this.pnlRightCenter.SuspendLayout();
@@ -260,8 +257,8 @@
             this.tlpLeftTopContent.ColumnCount = 2;
             this.tlpLeftTopContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpLeftTopContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpLeftTopContent.Controls.Add(this.tlpLeftTopLeftSide, 1, 0);
             this.tlpLeftTopContent.Controls.Add(this.tlpLeftTopRightSide, 0, 0);
+            this.tlpLeftTopContent.Controls.Add(this.fpSysInfo, 1, 0);
             this.tlpLeftTopContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeftTopContent.Location = new System.Drawing.Point(22, 90);
             this.tlpLeftTopContent.Name = "tlpLeftTopContent";
@@ -269,40 +266,6 @@
             this.tlpLeftTopContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpLeftTopContent.Size = new System.Drawing.Size(444, 369);
             this.tlpLeftTopContent.TabIndex = 0;
-            // 
-            // tlpLeftTopLeftSide
-            // 
-            this.tlpLeftTopLeftSide.ColumnCount = 1;
-            this.tlpLeftTopLeftSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpLeftTopLeftSide.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpLeftTopLeftSide.Controls.Add(this.fpCenterLeftBottom, 0, 1);
-            this.tlpLeftTopLeftSide.Controls.Add(this.fpCenterLeftTop, 0, 0);
-            this.tlpLeftTopLeftSide.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLeftTopLeftSide.Location = new System.Drawing.Point(180, 3);
-            this.tlpLeftTopLeftSide.Name = "tlpLeftTopLeftSide";
-            this.tlpLeftTopLeftSide.RowCount = 2;
-            this.tlpLeftTopLeftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpLeftTopLeftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpLeftTopLeftSide.Size = new System.Drawing.Size(261, 363);
-            this.tlpLeftTopLeftSide.TabIndex = 0;
-            // 
-            // fpCenterLeftBottom
-            // 
-            this.fpCenterLeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCenterLeftBottom.Location = new System.Drawing.Point(7, 186);
-            this.fpCenterLeftBottom.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpCenterLeftBottom.Name = "fpCenterLeftBottom";
-            this.fpCenterLeftBottom.Size = new System.Drawing.Size(247, 172);
-            this.fpCenterLeftBottom.TabIndex = 6;
-            // 
-            // fpCenterLeftTop
-            // 
-            this.fpCenterLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpCenterLeftTop.Location = new System.Drawing.Point(7, 5);
-            this.fpCenterLeftTop.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.fpCenterLeftTop.Name = "fpCenterLeftTop";
-            this.fpCenterLeftTop.Size = new System.Drawing.Size(247, 171);
-            this.fpCenterLeftTop.TabIndex = 0;
             // 
             // tlpLeftTopRightSide
             // 
@@ -809,10 +772,10 @@
             // pbCamera
             // 
             this.pbCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCamera.Location = new System.Drawing.Point(61, 79);
-            this.pbCamera.Margin = new System.Windows.Forms.Padding(46, 59, 36, 0);
+            this.pbCamera.Location = new System.Drawing.Point(46, 65);
+            this.pbCamera.Margin = new System.Windows.Forms.Padding(46, 65, 36, 0);
             this.pbCamera.Name = "pbCamera";
-            this.pbCamera.Size = new System.Drawing.Size(872, 377);
+            this.pbCamera.Size = new System.Drawing.Size(654, 277);
             this.pbCamera.TabIndex = 10;
             this.pbCamera.TabStop = false;
             // 
@@ -824,6 +787,15 @@
             this.fpCenterBottom.Name = "fpCenterBottom";
             this.fpCenterBottom.Size = new System.Drawing.Size(646, 303);
             this.fpCenterBottom.TabIndex = 11;
+            // 
+            // fpSysInfo
+            // 
+            this.fpSysInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpSysInfo.Location = new System.Drawing.Point(237, 112);
+            this.fpSysInfo.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.fpSysInfo.Name = "fpSysInfo";
+            this.fpSysInfo.Size = new System.Drawing.Size(801, 577);
+            this.fpSysInfo.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -848,7 +820,6 @@
             this.tlpLeftTop.ResumeLayout(false);
             this.tlpLeftTop.PerformLayout();
             this.tlpLeftTopContent.ResumeLayout(false);
-            this.tlpLeftTopLeftSide.ResumeLayout(false);
             this.tlpLeftTopRightSide.ResumeLayout(false);
             this.tlpLeftTopRightSide.PerformLayout();
             this.tlpRight.ResumeLayout(false);
@@ -884,7 +855,6 @@
         private ScottPlot.FormsPlot fpFailedCaseBottom;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTop;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopContent;
-        private System.Windows.Forms.TableLayoutPanel tlpLeftTopLeftSide;
         private System.Windows.Forms.Label lblSysInfo;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTopRightSide;
         private System.Windows.Forms.Label label1;
@@ -901,10 +871,8 @@
         private ScottPlot.FormsPlot fpFPY;
         private ScottPlot.FormsPlot fpCalib;
         private System.Windows.Forms.Label lblRightTop;
-        private ScottPlot.FormsPlot fpCenterLeftTop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTemperature;
-        private ScottPlot.FormsPlot fpCenterLeftBottom;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListView lvRightBottom;
@@ -925,6 +893,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pbCamera;
         private ScottPlot.FormsPlot fpCenterBottom;
+        private ScottPlot.FormsPlot fpSysInfo;
     }
 }
 

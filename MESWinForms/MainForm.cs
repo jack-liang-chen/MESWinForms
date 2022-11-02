@@ -49,6 +49,9 @@ namespace MESWinForms
             tlpLeftTop.BackColor = Color.Transparent;
             fpCenterBottom.BackColor = Color.Transparent;
 
+            fpSysInfo.Plot.Style(Style.Black);
+            fpSysInfo.Plot.Legend(true);
+
             fpFailedCaseTop.Plot.Title("Failed测试分析");
             fpFailedCaseTop.Plot.YAxis.Label("计数 (#)");
             fpFailedCaseTop.Plot.SetAxisLimits(yMin: 0);
@@ -58,13 +61,11 @@ namespace MESWinForms
             fpFailedCaseBottom.Plot.Style(Style.Black);
             RefreshFailedCaseChart();
 
-
             fpCenterBottom.Plot.Title("监控显示");
             fpCenterBottom.Plot.YAxis.Label("值");
 
             fpCalib.Plot.Style(Style.Black);
             fpCalib.Plot.Legend(true);
-
 
             fpCenterBottom.Plot.Style(Style.Black);
             fpFPY.Plot.Title("FPY 统计");
@@ -128,37 +129,8 @@ namespace MESWinForms
 
         private void GetDevicesInfo()
         {
-            var total = _assetSummary.total;
             var inUse = _assetSummary.inUse;
             var active = _assetSummary.active;
-            
-            double[] values = { inUse, total - inUse };
-            string centerText = $"{values[0] / total * 100:00.0}%";
-            Color color1 = Color.FromArgb(255, 0, 150, 200);
-            Color color2 = Color.FromArgb(100, 0, 150, 200);
-            var pie = fpCenterLeftTop.Plot.AddPie(values);
-            pie.DonutSize = .6;
-            pie.DonutLabel = centerText;
-            pie.CenterFont.Color = color1;
-            pie.OutlineSize = 2;
-            pie.SliceFillColors = new Color[] { color1, color2 };
-            fpCenterLeftTop.Plot.Style(Style.Black);
-            fpCenterLeftTop.Plot.Title("设备使用率");
-            fpCenterLeftTop.Refresh();
-
-            double[] values2 = { active, total - active };
-            string centerText2 = $"{values2[0] / total * 100:00.0}%";
-            Color color21 = Color.FromArgb(255, 0, 150, 200);
-            Color color22 = Color.FromArgb(100, 0, 150, 200);
-            var pie2 = fpCenterLeftBottom.Plot.AddPie(values2);
-            pie2.DonutSize = .6;
-            pie2.DonutLabel = centerText2;
-            pie2.CenterFont.Color = color21;
-            pie2.OutlineSize = 2;
-            pie2.SliceFillColors = new Color[] { color21, color22 };
-            fpCenterLeftBottom.Plot.Style(Style.Black);
-            fpCenterLeftBottom.Plot.Title("设备激活率");
-            fpCenterLeftBottom.Refresh();
 
             foreach (var vm in _assets.assets.GetRange(0,8))
             {
