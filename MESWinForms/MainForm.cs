@@ -61,7 +61,7 @@ namespace MESWinForms
             fpFailedCaseBottom.Plot.Style(Style.Black);
             RefreshFailedCaseChart();
 
-            fpCenterBottom.Plot.Title("监控显示");
+            fpCenterBottom.Plot.Title("监控显示 (温度,压力,光照强度)");
             fpCenterBottom.Plot.YAxis.Label("值");
 
             fpCalib.Plot.Style(Style.Black);
@@ -197,7 +197,8 @@ namespace MESWinForms
             if (_temperatureQueue.Count == QueueCapacity)
                 _temperatureQueue.Dequeue();
 
-            fpCenterBottom.Plot.AddSignal(_temperatureQueue.ToArray());
+            var signal1 = fpCenterBottom.Plot.AddSignal(_temperatureQueue.ToArray());
+            signal1.Label= "温度";
 
             lblTemperature.Text = String.Format("{0:N2}", currentTempValue);
 
@@ -209,7 +210,7 @@ namespace MESWinForms
             if (_pressureQueue.Count == QueueCapacity)
                 _pressureQueue.Dequeue();
 
-            fpCenterBottom.Plot.AddSignal(_pressureQueue.ToArray());
+            fpCenterBottom.Plot.AddSignal(_pressureQueue.ToArray(), label: "压力");
 
             // Light
             var currentLightData = await _daqService.GetCurrentTagValue("Light.tag");
@@ -219,7 +220,7 @@ namespace MESWinForms
             if (_lightQueue.Count == QueueCapacity)
                 _lightQueue.Dequeue();
 
-            fpCenterBottom.Plot.AddSignal(_lightQueue.ToArray());
+            fpCenterBottom.Plot.AddSignal(_lightQueue.ToArray()).Label = "光照强度";
             fpCenterBottom.Refresh();
         }
 
