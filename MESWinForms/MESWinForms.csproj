@@ -211,5 +211,11 @@
   <ItemGroup>
     <None Include="Resources\box-edge-top.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ni_logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

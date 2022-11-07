@@ -764,6 +764,8 @@
             // 
             // pbLogo
             // 
+            this.pbLogo.BackgroundImage = global::MESWinForms.Properties.Resources.ni_logo;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbLogo.Location = new System.Drawing.Point(1255, 3);
             this.pbLogo.Name = "pbLogo";
