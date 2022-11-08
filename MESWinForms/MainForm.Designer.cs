@@ -84,6 +84,7 @@
             this.tplTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pbSystemLink = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             this.pnlCenterBottom.SuspendLayout();
@@ -103,6 +104,7 @@
             this.tlpRightBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tplTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSystemLink)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -117,6 +119,7 @@
             this.tlpMain.Controls.Add(this.tlpRight, 2, 1);
             this.tlpMain.Controls.Add(this.pbLogo, 2, 0);
             this.tlpMain.Controls.Add(this.tplTitle, 1, 0);
+            this.tlpMain.Controls.Add(this.pbSystemLink, 0, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -816,6 +819,17 @@
             this.label5.Text = "NI数字化转型智能展示系统";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pbSystemLink
+            // 
+            this.pbSystemLink.BackgroundImage = global::MESWinForms.Properties.Resources.SystemLink_logo;
+            this.pbSystemLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbSystemLink.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSystemLink.Location = new System.Drawing.Point(4, 4);
+            this.pbSystemLink.Name = "pbSystemLink";
+            this.pbSystemLink.Size = new System.Drawing.Size(657, 168);
+            this.pbSystemLink.TabIndex = 5;
+            this.pbSystemLink.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -853,6 +867,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.tplTitle.ResumeLayout(false);
             this.tplTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSystemLink)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -915,6 +930,7 @@
         private System.Windows.Forms.TableLayoutPanel tplTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblDateTime;
+        private System.Windows.Forms.PictureBox pbSystemLink;
     }
 }
 

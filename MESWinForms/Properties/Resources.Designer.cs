@@ -133,6 +133,16 @@ namespace MESWinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SystemLink_logo {
+            get {
+                object obj = ResourceManager.GetObject("SystemLink_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap title_bg {
             get {
                 object obj = ResourceManager.GetObject("title_bg", resourceCulture);

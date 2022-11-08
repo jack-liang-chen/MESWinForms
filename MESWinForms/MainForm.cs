@@ -61,13 +61,14 @@ namespace MESWinForms
             fpFailedCaseBottom.Plot.Style(Style.Black);
             RefreshFailedCaseChart();
 
-            fpCenterBottom.Plot.Title("监控显示 (温度,压力,光照强度)");
+            fpCenterBottom.Plot.Title("监控显示");
             fpCenterBottom.Plot.YAxis.Label("值");
+            fpCenterBottom.Plot.Style(Style.Black);
+            fpCenterBottom.Plot.Legend().FontSize = 10;
 
             fpCalib.Plot.Style(Style.Black);
             fpCalib.Plot.Legend(true);
 
-            fpCenterBottom.Plot.Style(Style.Black);
             fpFPY.Plot.Title("FPY 统计");
             fpFPY.Plot.YAxis.Label("FPY");
             fpFPY.Plot.XAxis.Label("月");
@@ -202,6 +203,16 @@ namespace MESWinForms
 
             lblTemperature.Text = String.Format("{0:N2}", currentTempValue);
 
+            // Light
+            var currentLightData = await _daqService.GetCurrentTagValue("Light.tag");
+            var currentLightValue = double.Parse(currentLightData);
+            _lightQueue.Enqueue(currentLightValue);
+
+            if (_lightQueue.Count == QueueCapacity)
+                _lightQueue.Dequeue();
+
+            fpCenterBottom.Plot.AddSignal(_lightQueue.ToArray()).Label = "光照强度";
+
             // Pressure
             var currentPressureData = await _daqService.GetCurrentTagValue("Presure.tag");
             var currentPressureValue = double.Parse(currentPressureData);
@@ -212,15 +223,6 @@ namespace MESWinForms
 
             fpCenterBottom.Plot.AddSignal(_pressureQueue.ToArray(), label: "压力");
 
-            // Light
-            var currentLightData = await _daqService.GetCurrentTagValue("Light.tag");
-            var currentLightValue = double.Parse(currentLightData);
-            _lightQueue.Enqueue(currentLightValue);
-
-            if (_lightQueue.Count == QueueCapacity)
-                _lightQueue.Dequeue();
-
-            fpCenterBottom.Plot.AddSignal(_lightQueue.ToArray()).Label = "光照强度";
             fpCenterBottom.Refresh();
         }
 

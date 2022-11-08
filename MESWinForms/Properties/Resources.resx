@@ -139,6 +139,9 @@
   <data name="prods" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prods.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SystemLink_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SystemLink_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="title_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\title_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
