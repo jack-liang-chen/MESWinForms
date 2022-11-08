@@ -241,7 +241,7 @@
             this.lblSystemInfo.Name = "lblSystemInfo";
             this.lblSystemInfo.Size = new System.Drawing.Size(690, 37);
             this.lblSystemInfo.TabIndex = 8;
-            this.lblSystemInfo.Text = "硬件系统";
+            this.lblSystemInfo.Text = "硬件信息";
             this.lblSystemInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel1
@@ -762,7 +762,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(429, 32);
             this.label9.TabIndex = 2;
-            this.label9.Text = "报警系统";
+            this.label9.Text = "报警信息";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pbLogo
@@ -824,9 +824,9 @@
             this.pbSystemLink.BackgroundImage = global::MESWinForms.Properties.Resources.SystemLink_logo;
             this.pbSystemLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbSystemLink.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSystemLink.Location = new System.Drawing.Point(4, 4);
+            this.pbSystemLink.Location = new System.Drawing.Point(3, 3);
             this.pbSystemLink.Name = "pbSystemLink";
-            this.pbSystemLink.Size = new System.Drawing.Size(657, 168);
+            this.pbSystemLink.Size = new System.Drawing.Size(493, 126);
             this.pbSystemLink.TabIndex = 5;
             this.pbSystemLink.TabStop = false;
             // 
